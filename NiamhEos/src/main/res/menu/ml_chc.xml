@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/sort"
+        android:icon="?attr/xtp_srtt"
+        android:title="@string/efp__sort"
+        app:showAsAction="always"
+        android:visible="false"
+        tools:ignore="AlwaysShowAction"/>
+
+    <item
+        android:id="@+id/select_all"
+        android:icon="?attr/xtp_sldt_albl"
+        android:title="@string/efp__action_select_all"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/deselect"
+        android:icon="?attr/xtp_d_slct"
+        android:title="@string/efp__action_deselect"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/invert_selection"
+        android:icon="?attr/xtp_rev_slct"
+        android:title="@string/efp__action_invert_selection"
+        android:visible="false"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/ok"
+        android:icon="?attr/xtp_ko"
+        android:title="@android:string/ok"
+        app:showAsAction="always"/>
+</menu>

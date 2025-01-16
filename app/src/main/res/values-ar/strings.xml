@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources>
+
+
+<!--  <string name="app_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
+
+  <!--  <string name="firebase_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
+  <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>
+  <string name="Onesignal_id" translatable="false">600c6786-1ec0-45a8-ad21-7c691a3c9e0d</string>
+
+
+  <string name="text_photo">صورة</string>
+  <string name="app_name_short">Smart Vault</string>
+  <string name="load_ads_text">This action can contain ads</string>
+  <string name="app_icon_name_change">تغيير رمز التطبيق والاسم</string>
+  <string name="Change_Launguage">تغيير Launguage</string>
+  <string name="select_Different_launguage">حدد Launguage مختلفة</string>
+
+  <string name="Change_Password">تغيير كلمة المرور</string>
+  <string name="Intruder_Security">أمن الدخيل</string>
+  <string name="Enter_Password">أدخل كلمة المرور</string>
+  <string name="Enter_your_old_pin">أدخل رقم التعريف الشخصي القديم الخاص بك</string>
+  <string name="Enter_your_new_password">أدخل كلمة المرور الجديدة</string>
+  <string name="reagain_Enter_your_new_password">إعادة إدخال كلمة المرور</string>
+  <string name="Please_remember_this_password">يرجى تذكر كلمة المرور هذه</string>
+  <string name="Submit_text">يُقدِّم</string>
+  <string name="Enter_Answer_Here">أدخل الإجابة هنا</string>
+  <string name="Keypad_Touch_Vibration">اهتزاز لوحة المفاتيح التي تعمل باللمس</string>
+  <string name="text_video">فيديو</string>
+  <string name="text_No_Data">اضغط على زر + لتحديد البيانات</string>
+  <string name="No_Data">لم يتم العثور على البيانات</string>
+  <string name="text_vault">قبو</string>
+  <string name="privacy_policy">Https://securefolderapp.blogspot.com/2023/01/secure-folder-hide-image-vid.html</string>
+  <string name="feedback_email">Dharmikbhensdadia1997@gmail.com</string>
+  <string name="error_null_cursor">هناك خطأ ما!</string>
+  <string name="tital_intruder">دخيل</string>
+  <string name="Not_found_suspicious_text">لم يتم العثور على أي نشاط مشبوه لشخص غريب استخدم تطبيق Smart Vault</string>
+  <string name="english">إنجليزي</string>
+  <string name="hindi">هندي</string>
+  <string name="indonesia">إندونيسيا</string>
+  <string name="portuguese">البرتغالية</string>
+  <string name="french">فرنسي</string>
+  <string name="spanish">الأسبانية</string>
+  <string name="editor">محرر</string>
+  <string name="Bhasha_Board">اختار اللغة</string>
+  <string name="selected_name">المحدد</string>
+  <string name="Photos">الصور</string>
+  <string name="Videos">أشرطة فيديو</string>
+  <string name="Files">الملفات</string>
+  <string name="Browser">متصفح الويب الخاص</string>
+  <string name="Intruder_image">صورة الدخيل</string>
+  <string name="Settings">إعدادات</string>
+  <string name="tital_selfie">سيلفي</string>
+  <string name="select_image">حدد الصور</string>
+  <string name="select_video">حدد مقاطع الفيديو</string>
+  <string name="text_select">يختار</string>
+  <string name="tital_file_trash">سلة المهملات</string>
+  <string name="exit_app_message">تريد الخروج؟</string>
+  <string name="confirm_exit_message">بالتأكيد</string>
+  <string name="confirm_dismiss_message">لا</string>
+  <string name="confirm_Rate_message">قيمنا</string>
+  <string name="Alert_Message_for_App">** يرجى تعيين الرمز الافتراضي أثناء تحديث التطبيق **</string>
+  <string name="give_sd_card_permission">أذونات بطاقة SD المطلوبة من النظام</string>
+  <string name="give_seconday_permission_btn">منح إذن الكتابة</string>
+  <string name="give_seconday_permission_message">تم اكتشاف بطاقة SD في جهازك. لذلك ، سيتطلب أذونات بطاقة SD</string>
+  <string name="mismatched_psd">رقم التعريف الشخصي غير متطابق ، يرجى المحاولة مرة أخرى</string>
+  <string name="wrong_pwd">كلمة مرور خاطئة ، يرجى المحاولة مرة أخرى</string>
+  <string name="text_security_question">اختار سؤال الحماية</string>
+  <string name="security_question">.مسألة أمان</string>
+  <string name="security_answer">أدخل إجابتك الأمنية</string>
+  <string name="msg_answer">الرجاء كتابة إجابة صحيحة.</string>
+  <string name="msg_answer_valid">يجب ألا يكون الحرف الأول حرفًا خاصًا. الرجاء إدخال اسم إجابة صالح! \"</string>
+  <string name="msg_wrong_answer">الرجاء كتابة الإجابة الصحيحة.</string>
+  <string name="error_cannot_write">لا يمكن كتابة الصورة الملتقطة بالكاميرا.</string>
+  <string name="error_cannot_open">لا يمكن فتح الكاميرا.</string>
+  <string name="error_cannot_get_permission">إذن الكاميرا غير متوفر.</string>
+  <string name="error_not_having_camera">جهازك لا يحتوي على كاميرا أمامية.</string>
+  <string name="internet_message">الرجاء التحقق من اتصال الانترنت الخاص بك</string>
+  <string name="my_browser">متصفح آمن</string>
+  <string name="lable_bookmark_saved">تم حفظ الإشارة المرجعية</string>
+  <string name="lable_delete_successful">تم حذف الإشارة المرجعية</string>
+  <string name="title_activity_web">نشاط الويب</string>
+  <string name="tital_setting">إعدادات</string>
+  <string name="no_file">يبدو فارغًا ، لا يوجد ملف للاختيار</string>
+  <string name="rate_dialog_ok">Rate Now</string>
+  <string name="rate_dialog_no">مخرج</string>
+  <string name="rate_app_zero_star_error">اختر النجوم واضغط على \"قيم الآن\".</string>
+  <string name="title_list_to_grid">قائمة الشبكة</string>
+  <string name="menu_share">يشارك</string>
+  <string name="email_choose_from_client">اختر عميل بريد إلكتروني من ...</string>
+  <string name="loading_ads">تحميل الإعلانات ...</string>
+  <string-array name="question_array_list"> 
+    <item>ما هو لقبك؟</item>  
+    <item>ما هو فيلمك المفضل؟</item>  
+    <item>ما اسم والدك؟</item>  
+    <item>ما اسم والدتك؟</item>  
+    <item>في أي مدينة كانت وظيفتك الأولى؟</item>  
+    <item>ما الوظيفة التي تحلم بها؟</item>  
+    <item>ما هو عيد ميلادك؟</item>  
+    <item>ما هو فتى / فتى أحلامك؟</item>  
+    <item>ما اسم حيواناتك الأليفة؟</item>  
+    <item>المدينة التي تقابل زوجتك أولاً؟</item> 
+  </string-array>
+  <string-array name="efp__sorting_types"> 
+    <item>بالاسم تصاعديا</item>  
+    <item>بالاسم تنازلياً</item>  
+    <item>حسب الحجم تصاعديًا</item>  
+    <item>حسب الحجم تنازلي</item>  
+    <item>حسب التاريخ تصاعديًا</item>  
+    <item>حسب التاريخ تنازليًا</item> 
+  </string-array>
+  <string name="install">ثَبَّتَ</string>
+  <string name="close">يغلق</string>
+  <string name="please_wait_msg">انتظر من فضلك…</string>
+  <string name="connected_server_msg">متصل بالخادم</string>
+  <string name="min_digit_msg">أدخل 4 أرقام كحد أدنى</string>
+  <string name="dialog_cancel">يلغي</string>
+  <string name="permission_dialog_title">تتطلب أذونات</string>
+  <string name="permission_dialog_msg">الأذونات إلزامية لتقديم الضرب. يمكنك منحهم في إعدادات التطبيق.</string>
+  <string name="permission_account_msg">يحتاج التطبيق إلى إذن لقراءة حساباتك</string>
+  <string name="permission_dialog_ok">اذهب للاعدادات</string>
+  <string name="hide_success_msg">إخفاء بنجاح</string>
+  <string name="un_hide_success_msg">تم إلغاء الإخفاء بنجاح</string>
+  <string name="device_ad_enabled_msg">تم تمكين مسؤول الجهاز</string>
+  <string name="device_ad_disabled_msg">مسؤول الجهاز معطل</string>
+  <string name="menu_rate">قيمنا</string>
+  <string name="menu_policy">سياسة الخصوصية</string>
+  <string name="text_permission_desc">اسمح بإذن الوصول إلى الصور ومقاطع الفيديو</string>
+  <string name="Get_started">انقر فوق البدء</string>
+  <string name="Allow_to_access">السماح للإذن بالوصول إلى الصور / مقاطع الفيديو</string>
+  <string name="Create_password">إنشاء كلمة مرورك</string>
+  <string name="App_features">قفل الصور / مقاطع الفيديو واكتشاف ميزات أخرى مثيرة للاهتمام</string>
+  <string name="text_add_new_photos">أضف صور جديدة</string>
+  <string name="text_move_to_trash">انتقل إلى سلة المهملات</string>
+  <string name="text_save">يحفظ</string>
+  <string name="text_un_hide">إظهار</string>
+  <string name="text_delete">يمسح</string>
+  <string name="text_share">يشارك</string>
+  <string name="text_more">أكثر</string>
+  <string name="text_restore">يعيد</string>
+  <string name="forgot_password">هل نسيت كلمة السر؟</string>
+  <string name="Ad">إعلان</string>
+</resources>

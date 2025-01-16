@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.hidefile.secure.folder.vault",
+  "variantName": "appDevRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 125,
+      "versionName": "development",
+      "outputFile": "AperoModuleAds_vdevelopment(125)_Mar.14.2024-appDev-release.apk"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+
+plugins {
+    id 'kotlin-android'
+    id 'com.android.application'
+//    id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'org.jetbrains.kotlin.android'
+}
+android {
+    namespace 'com.hidefile.secure.folder.vault'
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.hidefile.secure.folder.vault"
+        minSdkVersion 23
+        versionCode 129
+        versionName "1.29"
+//        versionName "development"
+        targetSdkVersion 33
+        multiDexEnabled true
+        setProperty("archivesBaseName", "Secure_Folder_$versionName.$versionCode")
+
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            shrinkResources true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        jumboMode = true
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+//        pickFirst  'META-INF/*'
+        exclude  'META-INF/*'
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        abortOnError false
+    }
+    buildFeatures{
+        viewBinding true
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+dependencies {
+    //add
+    implementation 'androidx.core:core-ktx:1.9.0'
+
+    implementation "androidx.lifecycle:lifecycle-runtime:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'com.google.android.gms:play-services-measurement-api:21.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.5'
+    implementation 'com.google.android.gms:play-services-ads:21.0.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.11'
+    implementation 'com.google.firebase:firebase-analytics:21.0.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.5'
+
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    implementation('com.google.apis:google-api-services-drive:v2-rev170-1.20.0') {
+    }
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.android.gms:play-services-ads:21.1.0'
+    implementation 'com.google.http-client:google-http-client-gson:1.26.0'
+    implementation 'com.google.api-client:google-api-client-android:1.26.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+//    implementation 'com.onesignal:OneSignal:4.8.2'
+    implementation 'me.aflak.libraries:fingerprint:2.5.3'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'com.github.vihtarb:tooltip:0.2.0'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.google.firebase:firebase-firestore:24.3.1'
+    implementation 'com.google.firebase:firebase-config:21.2.0'
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+    configurations {
+        all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
+    implementation project(path: ':NiamhEos')
+    implementation 'com.karumi:dexter:6.2.3'
+    implementation project(path: ':CoXavier')
+    implementation project(path: ':Schuyler')
+    //app metrica
+//    implementation 'com.yandex.android:mobmetricalib:5.2.0'
+    //Facebook Ads
+    implementation 'com.facebook.android:audience-network-sdk:6.17.0'
+    implementation 'com.facebook.android:facebook-android-sdk:16.0.0'
+//    implementation 'com.google.ads.mediation:  :6.17.0.0'
+    implementation 'com.applovin.mediation:facebook-adapter:6.17.0.0'
+    implementation 'com.facebook.infer.annotation:infer-annotation:0.18.0'
+
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.1'
+//    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+    implementation 'com.applovin:applovin-sdk:11.4.2'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation 'com.yandex.android:mobmetricalib:5.2.0'
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation("com.google.android.ump:user-messaging-platform:2.1.0")
+
+
+}
+

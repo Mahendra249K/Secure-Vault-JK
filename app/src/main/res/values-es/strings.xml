@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources>
+
+
+<!--  <string name="app_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
+
+  <!--  <string name="firebase_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
+
+  <string name="app_icon_name_change">Cambiar icono de aplicación &amp; Nombre</string>
+
+  <string name="english">Inglés</string>
+  <string name="Change_Launguage">Cambiar idioma</string>
+  <string name="select_Different_launguage">Seleccione un idioma diferente</string>
+
+  <string name="Change_Password">Cambiar la contraseña</string>
+  <string name="Intruder_Security">Seguridad contra intrusos</string>
+  <string name="Enter_Password">Introducir la contraseña</string>
+  <string name="load_ads_text">This action can contain ads</string>
+  <string name="Enter_your_old_pin">Ingresa tu antiguo pin</string>
+  <string name="Enter_your_new_password">Ingrese nueva clave</string>
+  <string name="reagain_Enter_your_new_password">Volver a introducir contraseña</string>
+  <string name="Please_remember_this_password">Por favor recuerda esta contraseña</string>
+  <string name="Submit_text">Entregar</string>
+  <string name="Enter_Answer_Here">Ingrese la respuesta aquí</string>
+
+
+
+
+
+
+  <string name="Keypad_Touch_Vibration">Vibración táctil del teclado</string>
+
+
+  <string name="hindi">Hindi</string>  
+  <string name="indonesia">Indonesia</string>  
+  <string name="portuguese">Portugués</string>  
+  <string name="french">Francés</string>  
+  <string name="spanish">Español</string>  
+  <string name="editor">Editor</string>  
+  <string name="Bhasha_Board">Seleccione el idioma</string>
+  <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>  
+  <string name="Onesignal_id" translatable="false">600c6786-1ec0-45a8-ad21-7c691a3c9e0d</string>  
+  <string name="text_photo">Imagen</string>  
+  <string name="app_name_short">Smart Vault</string>
+  <string name="text_video">Video</string>  
+  <string name="text_No_Data">Presione el botón + para seleccionar datos</string>  
+  <string name="No_Data">Datos no encontrados</string>  
+  <string name="text_vault">Bóveda</string>  
+  <string name="privacy_policy">Https://securefolderapp.blogspot.com/2023/01/secure-folder-hide-image-vid.html</string>  
+  <string name="feedback_email">Dharmikbhensdadia1997@gmail.com</string>  
+  <string name="error_null_cursor">¡Algo salió mal!</string>  
+  <string name="tital_intruder">Intruso</string>  
+  <string name="Not_found_suspicious_text">No se encontró ninguna actividad sospechosa de un extraño que utilizó la aplicación Carpeta segura</string>  
+  <string name="tital_selfie">Autofoto</string>  
+  <string name="select_image">Seleccionar imágenes</string>  
+  <string name="select_video">Seleccionar vídeos</string>  
+  <string name="text_select">Seleccionar</string>  
+  <string name="tital_file_trash">Papelera de archivo</string>  
+  <string name="exit_app_message">¿Quieres salir?</string>  
+  <string name="confirm_exit_message">Seguro</string>  
+  <string name="confirm_dismiss_message">No</string>  
+  <string name="confirm_Rate_message">Nos califica</string>  
+  <string name="Alert_Message_for_App">** Establezca el icono predeterminado durante la actualización de la aplicación **</string>  
+  <string name="give_sd_card_permission">Permisos de tarjeta SD requeridos por el sistema</string>  
+  <string name="give_seconday_permission_btn">OTORGAR PERMISO DE ESCRITURA</string>  
+  <string name="give_seconday_permission_message">Se detectó una tarjeta SD en su dispositivo. Por lo tanto, requeriría permisos de tarjeta SD</string>  
+  <string name="mismatched_psd">El PIN no coincide, inténtalo de nuevo.</string>  
+  <string name="wrong_pwd">Contraseña incorrecta, inténtalo de nuevo</string>  
+  <string name="text_security_question">Elija una pregunta de seguridad</string>
+  <string name="security_question">Pregunta de seguridad</string>
+
+  <string name="security_answer">Ingrese su respuesta de seguridad</string>  
+  <string name="msg_answer">Por favor escriba la respuesta correcta.</string>  
+  <string name="msg_answer_valid">El primer carácter no debe ser un carácter especial. ¡Ingrese un nombre de respuesta válido!\"</string>  
+  <string name="msg_wrong_answer">Por favor escriba la respuesta correcta.</string>  
+  <string name="error_cannot_write">No se puede escribir la imagen capturada por la cámara.</string>  
+  <string name="error_cannot_open">No se puede abrir la cámara.</string>  
+  <string name="error_cannot_get_permission">El permiso de la cámara no está disponible.</string>  
+  <string name="error_not_having_camera">Su dispositivo no tiene cámara frontal.</string>  
+  <string name="internet_message">Por favor revise su conexion a internet</string>  
+  <string name="my_browser">Navegador seguro</string>  
+  <string name="lable_bookmark_saved">Marcador guardado</string>  
+  <string name="lable_delete_successful">Marcador eliminado</string>  
+  <string name="title_activity_web">Actividad web</string>  
+  <string name="tital_setting">Ajustes</string>  
+  <string name="no_file">Parece vacío, no hay archivo para seleccionar</string>
+  <string name="rate_dialog_ok">Rate Now</string>
+  <string name="rate_dialog_no">Salida</string>  
+  <string name="rate_app_zero_star_error">Elija las estrellas y toque \"Calificar ahora\".</string>  
+  <string name="title_list_to_grid">Lista a cuadrícula</string>  
+  <string name="menu_share">Compartir</string>  
+  <string name="email_choose_from_client">Elija un cliente de correo electrónico de...</string>  
+  <string name="loading_ads">Cargando anuncios...</string>  
+  <string-array name="question_array_list"> 
+    <item>¿Cuál es tu apodo?</item>  
+    <item>¿Cuál es tu película favorita?</item>  
+    <item>¿Cómo se llama tu padre?</item>  
+    <item>¿Cómo se llama tu madre?</item>  
+    <item>¿En qué ciudad fue tu primer trabajo?</item>  
+    <item>¿Cuál es el trabajo de tus sueños?</item>  
+    <item>¿Cuál es tu cumpleaños?</item>  
+    <item>¿Cuál es el chico o la chica de tus sueños?</item>  
+    <item>¿Cómo se llama tu mascota?</item>  
+    <item>¿Ciudad en la que conoces a tu cónyuge primero?</item> 
+  </string-array>  
+  <string-array name="efp__sorting_types"> 
+    <item>Por nombre, ascendiendo</item>  
+    <item>Por nombre, descendiente</item>  
+    <item>Por tamaño, ascendente</item>  
+    <item>Por tamaño, descendiendo</item>  
+    <item>Por fecha, ascendente</item>  
+    <item>Por fecha, descendente</item> 
+  </string-array>
+
+
+  <string name="Photos">Fotos</string>
+  <string name="Videos">Vídeos</string>
+  <string name="Files">Archivos</string>
+  <string name="Browser">Navegador web privado</string>
+  <string name="Intruder_image">Imagen de intruso</string>
+  <string name="Settings">Ajustes</string>
+
+
+
+
+  <string name="install">INSTALAR</string>  
+  <string name="close">Cerca</string>  
+  <string name="please_wait_msg">Espere por favor…</string>  
+  <string name="connected_server_msg">Conectado al servidor</string>  
+  <string name="min_digit_msg">Ingrese mínimo 4 dígitos</string>  
+  <string name="dialog_cancel">Cancelar</string>  
+  <string name="permission_dialog_title">Se requieren permisos</string>  
+  <string name="permission_dialog_msg">Los permisos son obligatorios para el servicio de bateo. Puede otorgarlos en la configuración de la aplicación.</string>  
+  <string name="permission_account_msg">La aplicación necesita permiso para leer sus cuentas</string>  
+  <string name="permission_dialog_ok">IR A LA CONFIGURACIÓN</string>  
+  <string name="hide_success_msg">Ocultar con éxito</string>  
+  <string name="un_hide_success_msg">Mostrar correctamente</string>  
+  <string name="device_ad_enabled_msg">Administrador de dispositivos habilitado</string>  
+  <string name="device_ad_disabled_msg">Administrador de dispositivos deshabilitado</string>  
+  <string name="menu_rate">Nos califica</string>  
+  <string name="menu_policy">Política de privacidad</string>  
+  <string name="text_permission_desc">Permita el permiso para acceder a fotos, videos, audios para la funcionalidad de la aplicación, así que proceda</string>  
+  <string name="Get_started">Haga clic en Comenzar</string>  
+  <string name="Allow_to_access">Permitir permiso para acceder a fotos/videos</string>  
+  <string name="Create_password">Crea tu contraseña</string>  
+  <string name="App_features">Bloquee fotos/videos y descubra otras características interesantes</string>  
+  <string name="text_add_new_photos">Agregar nuevas fotos</string>  
+  <string name="text_move_to_trash">Mover a la papelera</string>  
+  <string name="text_save">Ahorrar</string>  
+  <string name="text_un_hide">Mostrar</string>  
+  <string name="text_delete">Borrar</string>  
+  <string name="text_share">Compartir</string>  
+  <string name="text_more">Más</string>  
+  <string name="text_restore">Restaurar</string>  
+  <string name="Ad">Anuncio</string>  
+  <string name="forgot_password">Has olvidado tu contraseña?</string>
+  <string name="selected_name">Seleccionado</string>
+
+  <string name="ad">Anuncio</string>
+</resources>

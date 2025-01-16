@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="customAttrs">
+    <attr name="xtp_bg_slct" format="reference" />
+    <attr name="xtp_cancel" format="reference" />
+    <attr name="xtp_d_slct" format="reference" />
+    <attr name="xtp_grd" format="reference" />
+    <attr name="xtp_rev_slct" format="reference" />
+    <attr name="xtp_lst" format="reference" />
+    <attr name="xtp_fld_nw" format="reference" />
+    <attr name="xtp_ko" format="reference" />
+    <attr name="xtp_sldt_albl" format="reference" />
+    <attr name="xtp_srtt" format="reference" />
+    <attr name="xtp_dstr" format="reference" />
+</declare-styleable>
+
+</resources>

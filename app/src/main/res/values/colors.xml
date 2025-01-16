@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="exit_ad_bgfilter">#1200A2FF</color>
+    <color name="grayads">#403E3E</color>
+
+
+    <color name="back_1">#C4D8F9</color>
+    <color name="back_2">#FEDEFF</color>
+    <color name="back_3">#FFF38C</color>
+    <color name="back_4">#a4bddc</color>
+    <color name="back_5">#ffa24c</color>
+    <color name="back_6">#CDE990</color>
+    <color name="rate_dialog_bg">#FBFDFE</color>
+
+
+
+    <color name="clr_white_trance_6">#f2f2f2</color>
+
+
+    <color name="secondaryTabColor">#696b6d</color>
+
+    <color name="grey_800">#616161</color>
+    <color name="light_lavendor">#E5E0FF</color>
+    <color name="sky_light">#FBFDFE</color>
+    <color name="sky_light2">#F3FBFF</color>
+    <color name="sky_light1">#F7FCFE</color>
+    <color name="sky_blue">#1C68FB</color>
+    <color name="blue_dark">#77A9FE</color>
+    <color name="sky_dark">#c2e7ff</color>
+    <color name="sky_dark1">#c2e7ff</color>
+    <color name="bluedark_text">#0788EF</color>
+    <color name="blue_text">#627EEA</color>
+    <color name="blue_button">#97bdfe</color>
+    <color name="blue_ad">#5BC0F8</color>
+    <color name="blue_ad_light">#7EE9F6</color>
+    <color name="blue_app_icon">#1ab0f4</color>
+    <color name="pink_light">#f5f0f0</color>
+    <color name="pink_dark">#ffdad9</color>
+    <color name="pink_original">#FEDEFF</color>
+    <color name="greenlight_new">#D6E4E5</color>
+    <color name="pink_original_new_extra">#FEDEFF</color>
+    <color name="pink_darkfull">#F73D93</color>
+    <color name="pink_back">#b6efe8</color>
+    <color name="color_blue">#f1008a</color>
+    <color name="wooden_dark_text">#000000</color>
+    <color name="password_correct">#000000</color>
+    <color name="wooden_dark_text_perment">#000000</color>
+    <color name="green_mid_dark">#d9e8cb</color>
+    <color name="green_mid_dark1">#d9e8cb</color>
+    <color name="green_mid_dark2">#B8D29F</color>
+    <color name="green_full_dark">#1e291a</color>
+    <color name="green_white">#f0f1e9</color>
+    <color name="green_sky">#e4eadc</color>
+    <color name="green_background_answer">#fdfcf7</color>
+    <color name="broad_main_sky_light">#F3F8FF</color>
+    <color name="broad_main_sky_light1">#EEF1FF</color>
+    <color name="broad_main_sky">#E3F6FF</color>
+    <color name="ripple">#22000000</color>
+    <color name="broad_light_sky">#ECF9FF</color>
+    <color name="ad_white">#F5F5F5</color>
+    <color name="shinner_white_background">#F5F5F5</color>
+    <color name="white_default">#FFFFFF</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#B4B4B4</color>
+    <color name="colorAccent">#1C68FB</color>
+    <color name="text_effect">#50FFFFFF</color>
+    <color name="md_grey_500">#9E9E9E</color>
+    <color name="black">#000000</color>
+    <color name="permentWhite">#FFFFFF</color>
+    <color name="black_default">#000000</color>
+    <color name="homeTm">#403526</color>
+    <color name="white">#FFFFFF</color>
+    <color name="ripple_default">#848485</color>
+    <color name="bra10">#65626C</color>
+    <color name="bra06">#f5f6fa</color>
+    <color name="trans">#00000000</color>
+    <color name="colorLightGray2">#E4E4E4</color>
+    <color name="progressBackBlue">@color/color_blue</color>
+    <color name="progressBlue">#5804df</color>
+    <color name="textColor2">#909090</color>
+    <color name="color_black_transparent_light">#33000000</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow">#e6a032</color>
+    <color name="adBorder">#93B3F2</color>
+    <color name="appicon_color">#4864C5</color>
+    <color name="gray_solid">#E9E9E9</color>
+    <color name="text_black">#1A1A1A</color>
+    <color name="text_gold">#ebcb5a</color>
+    <color name="text_black_value">#000013</color>
+    <color name="drawer_item_selection">#F9F9F9</color>
+    <color name="gray">#808080</color>
+    <color name="appColor">#4285F4</color>
+    <color name="purple_200">#FF0000</color>
+
+
+
+
+    <color name="orange_clr">#FFA234</color>
+    <color name="semi_gray_ad">#c84a4848</color>
+    <color name="gnt_ad_green">#3a6728</color>
+    <color name="themecolor">#9f4bff</color>
+
+
+
+    <color name="colorBlack_transparent">#66000000</color>
+    <color name="colorBlack_transparentDark">#99000000</color>
+
+
+
+</resources>

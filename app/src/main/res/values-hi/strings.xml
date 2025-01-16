@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+<!--  <string name="app_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
+
+  <!--  <string name="firebase_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
+  <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>
+  <string name="Onesignal_id" translatable="false">600c6786-1ec0-45a8-ad21-7c691a3c9e0d</string>  
+  <string name="text_photo">चित्र</string>
+  <string name="Change_Launguage">भाषा बदलें</string>
+  <string name="select_Different_launguage">भिन्न भाषा का चयन करें</string>
+
+  <string name="Change_Password">पासवर्ड बदलें</string>
+  <string name="Intruder_Security">घुसपैठिए सुरक्षा</string>
+  <string name="Enter_Password">पासवर्ड दर्ज करें</string>
+  <string name="Enter_your_old_pin">अपना पुराना पिन डालें</string>
+  <string name="Enter_your_new_password">नया पासवर्ड दर्ज करें</string>
+
+  <string name="reagain_Enter_your_new_password">फिर से पासवर्ड डालें</string>
+  <string name="Please_remember_this_password">कृपया इस पासवर्ड को याद रखें</string>
+  <string name="Submit_text">जमा करना</string>
+  <string name="Enter_Answer_Here">उत्तर यहाँ दर्ज करें</string>
+
+  <string name="load_ads_text">This action can contain ads</string>
+
+
+  <string name="Keypad_Touch_Vibration">कीपैड टच कंपन</string>
+
+
+  <string name="app_name_short">Smart Vault</string>
+  <string name="app_icon_name_change">ऐप आइकन बदलें &amp; नाम</string>
+
+  <string name="text_video">वीडियो</string>  
+  <string name="text_No_Data">डेटा चुनने के लिए + बटन दबाएं</string>  
+  <string name="No_Data">डेटा नहीं मिला</string>  
+  <string name="text_vault">मेहराब</string>  
+  <string name="privacy_policy">Https://securefolderapp.blogspot.com/2023/01/secure-folder-hide-image-vid.html</string>  
+  <string name="feedback_email">Dharmikbensdadia1997@gmail.com</string>  
+  <string name="error_null_cursor">कुछ गलत हो गया!</string>  
+  <string name="tital_intruder">घुसेड़नेवाला</string>  
+  <string name="Not_found_suspicious_text">सिक्योर फोल्डर ऐप का इस्तेमाल करने वाले किसी अजनबी की कोई संदिग्ध गतिविधि नहीं मिली</string>  
+  <string name="tital_selfie">सेल्फी</string>  
+  <string name="select_image">छवियों का चयन करें</string>  
+  <string name="select_video">वीडियो चुनें</string>  
+  <string name="text_select">चुनना</string>  
+  <string name="tital_file_trash">फ़ाइल कचरा</string>  
+  <string name="exit_app_message">बाहर निकलना चाहते हैं?</string>  
+  <string name="confirm_exit_message">ज़रूर</string>  
+  <string name="confirm_dismiss_message">नहीं</string>  
+  <string name="confirm_Rate_message">हमें रेटिंग दें</string>  
+  <string name="Alert_Message_for_App">** कृपया ऐप अपडेट करते समय डिफ़ॉल्ट आइकन सेट करें **</string>  
+  <string name="give_sd_card_permission">सिस्टम आवश्यक एसडी कार्ड अनुमतियाँ</string>  
+  <string name="give_seconday_permission_btn">लिखने की अनुमति दें</string>  
+  <string name="give_seconday_permission_message">आपके डिवाइस में एसडी कार्ड का पता चला है। तो, इसे एसडी कार्ड अनुमतियों की आवश्यकता होगी</string>  
+  <string name="mismatched_psd">पिन मेल नहीं खाता कृपया पुनः प्रयास करें</string>  
+  <string name="wrong_pwd">गलत पासवर्ड, कृपया पुन: प्रयास करें</string>  
+  <string name="text_security_question">एक सुरक्षा प्रश्न चुनें</string>
+  <string name="security_question">सुरक्षा प्रश्न</string>
+
+  <string name="security_answer">अपना सुरक्षा उत्तर दर्ज करें</string>  
+  <string name="msg_answer">कृपया सही उत्तर लिखें।</string>  
+  <string name="msg_answer_valid">पहला कैरेक्टर स्पेशल कैरेक्टर नहीं होना चाहिए। कृपया मान्य उत्तर नाम दर्ज करें!\"</string>  
+  <string name="msg_wrong_answer">कृपया सही उत्तर लिखें।</string>  
+  <string name="error_cannot_write">कैमरे द्वारा कैप्चर की गई छवि नहीं लिख सकते।</string>  
+  <string name="error_cannot_open">कैमरा नहीं खोल सकता।</string>  
+  <string name="error_cannot_get_permission">कैमरा अनुमति उपलब्ध नहीं है।</string>  
+  <string name="error_not_having_camera">आपके डिवाइस में फ्रंट कैमरा नहीं है।</string>  
+  <string name="internet_message">कृपया अपने इंटरनेट कनेक्शन की जाँच करें</string>  
+  <string name="my_browser">सुरक्षित ब्राउज़र</string>  
+  <string name="lable_bookmark_saved">बुकमार्क सहेजा गया</string>  
+  <string name="lable_delete_successful">बुकमार्क हटा दिया गया</string>  
+  <string name="title_activity_web">Webगतिविधि</string>  
+  <string name="tital_setting">सेटिंग</string>
+  <string name="no_file">यह खाली लगता है, चुनने के लिए कोई फ़ाइल नहीं है</string>
+  <string name="rate_dialog_ok">Rate Now</string>
+  <string name="rate_dialog_no">बाहर निकलना</string>  
+  <string name="rate_app_zero_star_error">सितारे चुनें और \"अभी रेट करें\" पर टैप करें।</string>  
+  <string name="title_list_to_grid">ग्रिड की सूची</string>  
+  <string name="menu_share">शेयर करना</string>  
+  <string name="email_choose_from_client">से एक ईमेल क्लाइंट चुनें...</string>  
+  <string name="loading_ads">विज्ञापन लोड हो रहे हैं...</string>  
+  <string-array name="question_array_list"> 
+    <item>आपका उपनाम क्या है?</item>  
+    <item>आपकी पसंदीदा फिल्म कौन सी है?</item>  
+    <item>आपके पिता का नाम क्या है?</item>  
+    <item>आपकी मां का नाम क्या है?</item>  
+    <item>आपकी पहली नौकरी किस शहर में हुई थी?</item>  
+    <item>आपका ड्रीम जॉब क्या है?</item>  
+    <item>आपका जन्मदिन क्या है?</item>  
+    <item>आपकी सपनों की लड़की/लड़का क्या है?</item>  
+    <item>आपके पालतू जानवर का नाम क्या है?</item>  
+    <item>शहर आप अपने जीवनसाथी से पहले मिलते हैं?</item> 
+  </string-array>  
+  <string-array name="efp__sorting_types"> 
+    <item>नाम से, आरोही</item>  
+    <item>नाम से, अवरोही</item>  
+    <item>आकार से, आरोही</item>  
+    <item>आकार से, अवरोही</item>  
+    <item>तिथि के अनुसार, आरोही</item>  
+    <item>तिथि के अनुसार, अवरोही</item> 
+  </string-array>
+
+
+  <string name="Photos">तस्वीरें</string>
+  <string name="Videos">वीडियो</string>
+  <string name="Files">फ़ाइलें</string>
+  <string name="Browser">वेब ब्राउज़र</string>
+  <string name="Intruder_image">घुसपैठिया छवि</string>
+  <string name="Settings">सेटिंग</string>
+
+  <string name="ad">विज्ञापन</string>  
+  <string name="install">स्थापित करना</string>  
+  <string name="close">बंद करना</string>  
+  <string name="please_wait_msg">कृपया प्रतीक्षा करें…</string>  
+  <string name="connected_server_msg">सर्वर से जुड़ा</string>  
+  <string name="min_digit_msg">न्यूनतम 4 अंक दर्ज करें</string>  
+  <string name="english">अंग्रेज़ी</string>  
+  <string name="hindi">हिंदी</string>  
+  <string name="indonesia">इंडोनेशिया</string>  
+  <string name="portuguese">पुर्तगाली</string>  
+  <string name="french">फ्रेंच</string>  
+  <string name="spanish">स्पैनिश</string>  
+  <string name="editor">संपादक</string>  
+  <string name="Bhasha_Board">भाषा चुने</string>
+  <string name="dialog_cancel">रद्द करना</string>  
+  <string name="permission_dialog_title">अनुमतियों की आवश्यकता है</string>  
+  <string name="permission_dialog_msg">बैटर सर्व करने के लिए अनुमतियाँ अनिवार्य हैं। आप उन्हें ऐप सेटिंग में दे सकते हैं।</string>  
+  <string name="permission_account_msg">ऐप को आपके खातों को पढ़ने की अनुमति चाहिए</string>  
+  <string name="permission_dialog_ok">सेटिंग्स में जाओ</string>  
+  <string name="hide_success_msg">सफलतापूर्वक छुपाएं</string>  
+  <string name="un_hide_success_msg">सफलतापूर्वक अन-हाइड करें</string>  
+  <string name="device_ad_enabled_msg">डिवाइस व्यवस्थापक सक्षम</string>  
+  <string name="device_ad_disabled_msg">डिवाइस व्यवस्थापक अक्षम</string>  
+  <string name="menu_rate">हमें रेटिंग दें</string>  
+  <string name="menu_policy">गोपनीयता नीति</string>  
+  <string name="text_permission_desc">एक्सेस फोटो, वीडियो के लिए अनुमति दें। ऐप की कार्यक्षमता के लिए ऑडियो तो इसे आगे बढ़ाएं</string>  
+  <string name="Get_started">प्रारंभ करें क्लिक करें</string>  
+  <string name="Allow_to_access">फ़ोटो/वीडियो एक्सेस करने की अनुमति दें</string>  
+  <string name="Create_password">अपना पासवर्ड बनाएं</string>  
+  <string name="App_features">तस्वीरें/वीडियो लॉक करें और अन्य रोचक विशेषताओं की खोज करें</string>  
+  <string name="text_add_new_photos">नई तस्वीरें जोड़ें</string>  
+  <string name="text_move_to_trash">ट्रैश कैन में ले जाएं</string>  
+  <string name="text_save">बचाना</string>  
+  <string name="text_un_hide">सामने लाएँ</string>  
+  <string name="text_delete">मिटाना</string>  
+  <string name="text_share">शेयर करना</string>  
+  <string name="text_more">अधिक</string>  
+  <string name="text_restore">पुनर्स्थापित करना</string>  
+  <string name="forgot_password">पासवर्ड भूल गए?</string>
+  <string name="Ad">विज्ञापन</string>  
+  <string name="selected_name">चुने हुए</string>
+</resources>

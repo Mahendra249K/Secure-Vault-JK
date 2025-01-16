@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+
+    <item
+        android:id="@+id/bg_item"
+        android:drawable="@color/white">
+
+    </item>
+    <item
+        android:drawable="@drawable/bg_white"
+        android:gravity="center" />
+    <item
+        android:id="@+id/item_app_icon"
+        android:width="@dimen/_100sdp"
+        android:height="@dimen/_100sdp"
+        android:drawable="@drawable/ic_logo"
+        android:gravity="center" />
+
+</layer-list>

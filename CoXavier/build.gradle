@@ -1,0 +1,143 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: "com.jfrog.bintray"
+
+version = "1.0.0"
+
+android {
+    compileSdkVersion 33
+    namespace 'com.Xavier.TravisScott'
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 33
+        versionCode 1
+        versionName version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.airbnb.android:lottie:5.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.annotation:annotation:1.4.0'
+    implementation 'com.google.android.material:material:1.6.1'
+}
+ext {
+    bintrayRepo = 'maven'
+    siteUrl = 'https://github.com/patilshreyas/MaterialDialog-Android'
+    gitUrl = 'https://github.com/patilshreyas/MaterialDialog-Android.git'
+    bintrayName = 'MaterialDialog'
+    publishedGroupId = 'com.shreyaspatil'
+    libraryName = 'MaterialDialog'
+    artifact = 'MaterialDialog'
+    libraryDescription = 'Android Library to implement animated, beautiful, stylish Material Dialog in android apps easily.'
+    githubRepository= 'patilshreyas/MaterialDialog'
+    developerEmail = 'mahendra@jksol.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+    libraryVersion = version
+    developerId = 'MahendraGohil'
+    developerName = 'Mahendra Gohil'
+}
+
+group = publishedGroupId
+def siteUrl = 'https://github.com/PatilShreyas/MaterialDialog-Android'
+def gitUrl = 'https://github.com/PatilShreyas/MaterialDialog-Android.git'
+//install {
+//    repositories.mavenInstaller {
+//        pom {
+//            project {
+//                packaging 'aar'
+//                name 'MaterialDialog'
+//                groupId 'com.shreyaspatil'
+//                artifactId = 'MaterialDialog'
+//                description = 'Android Library to implement animated, beautiful, stylish Material Dialog in android apps easily.'
+//                url siteUrl
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id = 'MahendraGohil'
+//                        name = 'Mahendra Gohil'
+//                        email = 'mahendra@jksol.com'
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//                }
+//            }
+//        }
+//    }
+//}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+//
+//    configurations = ['archives']
+//    pkg {
+//        repo = "maven"
+//        name = "com.shreyaspatil:MaterialDialog" // TODO
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = ["Apache-2.0"]
+//        publish = true
+//        version {
+//            gpg {
+//                sign = true
+//                passphrase = properties.getProperty("bintray.gpg.password")
+//            }
+//        }
+//    }
+//}
+//apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'

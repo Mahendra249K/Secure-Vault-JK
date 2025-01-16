@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.hidefile.secures.folder.vault",
+  "variantName": "appProdRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 123,
+      "versionName": "1.23",
+      "outputFile": "AperoModuleAds_v1.23(123)_Oct.17.2023-appProd-release.apk"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+
+buildscript {
+    repositories {
+        google()
+//        jcenter()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://jitpack.io" }
+        maven { url 'https://plugins.gradle.org/m2' }
+        maven { url "https://repo.grails.org/grails/core/" }
+        maven { url "https://repo.grails.org/grails/core/" }
+//        maven { url 'https://nexus.web.cern.ch/nexus/content/repositories/public/' }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.google.gms:google-services:4.3.14'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
+//        classpath "com.github.dcendents:android-maven-gradle-plugin:1.5"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0'
+//        classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:4.0.1'
+//        classpath 'org.apache.ant:ant:1.9.7'
+
+
+    }
+
+}
+
+allprojects {
+    repositories {
+        google()
+//        jcenter()
+        mavenCentral()
+        gradlePluginPortal()
+//        maven {
+//            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
+//        }
+//        maven {url 'https://android-sdk.is.com/'}
+        maven {
+            url 'https://artifact.bytedance.com/repository/pangle'
+        }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://plugins.gradle.org/m2' }
+        maven { url "https://repo.grails.org/grails/core/" }
+        maven {
+            url 'https://artifactory.apero.vn/artifactory/gradle-release/'
+            // Contact us for account
+            credentials {
+                username "thang-statusvideoreel"
+                password "statusvideoreel@123"
+            }
+        }
+
+
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+
+
+    }
+
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

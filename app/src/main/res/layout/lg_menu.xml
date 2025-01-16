@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llImgSelectAllOpt"
+    android:layout_width="match_parent"
+    android:background="@drawable/pin_l2"
+    android:layout_height="wrap_content"
+    tools:viewBindingIgnore="true"
+    android:gravity="center"
+    android:layout_margin="7dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/linUnHide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIconUnHide"
+            android:layout_width="@dimen/dim_24"
+            android:layout_height="@dimen/dim_24"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/unhide" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUnHide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_4"
+            android:text="@string/text_un_hide"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sip_12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIconDelete"
+            android:layout_width="@dimen/dim_24"
+            android:layout_height="@dimen/dim_24"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/delete_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUnHide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_4"
+            android:text="@string/text_delete"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sip_12"
+            tools:ignore="DuplicateIds" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIconShare"
+            android:layout_width="@dimen/dim_20"
+            android:layout_height="@dimen/dim_20"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/share" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUnHide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_8"
+            android:text="@string/text_share"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sip_12"
+            tools:ignore="DuplicateIds" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIconMore"
+            android:layout_width="@dimen/dim_20"
+            android:layout_height="@dimen/dim_20"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/more" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_8"
+            android:text="@string/text_more"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sip_12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRestore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIconRestore"
+            android:layout_width="@dimen/dim_24"
+            android:layout_height="@dimen/dim_24"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/restore" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_4"
+            android:text="@string/text_restore"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sip_12" />
+    </LinearLayout>
+
+</LinearLayout>

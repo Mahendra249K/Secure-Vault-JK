@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hidefile.secure.folder.vault.cluecanva.VTv xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:drawablePadding="8dp"
+    android:gravity="center_vertical|start"
+    android:backgroundTint="@color/green_mid_dark"
+    android:textColor="@color/black_default"
+    android:textSize="16sp"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp" />

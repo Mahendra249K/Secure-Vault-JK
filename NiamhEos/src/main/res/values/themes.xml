@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ExFilePickerThemeLight" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="xtp_cancel">@drawable/ic_baseline_close_24</item>
+        <item name="xtp_d_slct">@drawable/vi_cl_desl</item>
+        <item name="xtp_grd">@drawable/ic_baseline_grid_on_24</item>
+        <item name="xtp_rev_slct">@drawable/vi_cl_invrt_sel</item>
+        <item name="xtp_lst">@drawable/ic_baseline_list_24</item>
+        <item name="xtp_fld_nw">@drawable/vi_cl_fldr</item>
+        <item name="xtp_ko">@drawable/ic_baseline_check_24</item>
+        <item name="xtp_sldt_albl">@drawable/vi_cl_slt_lla</item>
+        <item name="xtp_srtt">@drawable/ic_baseline_view_headline_24</item>
+        <item name="xtp_dstr">@drawable/vi_cl_desl</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+</resources>

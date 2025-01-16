@@ -1,0 +1,3 @@
+include ':app', ':Schuyler', ':NiamhEos', ':CoXavier'
+rootProject.name = "Hide File Vault Secure"
+

@@ -1,0 +1,189 @@
+<resources>
+    <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
+<!--    <string name="app_name" translatable="false">Secure folder : Gallery Lock</string>-->
+
+    <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
+<!--    <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>-->
+
+
+
+
+    <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>
+    <string name="Onesignal_id" translatable="false">600c6786-1ec0-45a8-ad21-7c691a3c9e0d</string>
+    <string name="text_photo">Picture</string>
+    <string name="app_name_short">Smart Vault</string>
+    <string name="app_icon_name_change">Change App Icon &amp; Name</string>
+
+
+    <string name="something_went_wrong">Something went wrong!! please try again..</string>
+
+
+
+
+
+    <!-- FAN ID -->
+
+    <string name="facebook_app_id">2349494025210084</string>
+
+
+
+    <string name="Change_Launguage">Change Launguage</string>
+    <string name="select_Different_launguage">Select Different Launguage</string>
+    <string name="load_ads_text">This action can contain ads</string>
+    <string name="Change_Password">Change Password</string>
+    <string name="Intruder_Security">Intruder Security</string>
+    <string name="Enter_Password">Enter Password</string>
+    <string name="Enter_your_old_pin">Enter your old pin</string>
+    <string name="Enter_your_new_password">Enter new Password</string>
+    <string name="reagain_Enter_your_new_password">Reagain Enter Password</string>
+    <string name="Please_remember_this_password">Please remember this password</string>
+    <string name="Submit_text">Submit</string>
+    <string name="Enter_Answer_Here">Enter Answer Here</string>
+    <string name="Keypad_Touch_Vibration">Keypad Touch Vibration</string>
+    <string name="text_video">Video</string>
+    <string name="text_No_Data">Press + Button to Select Data</string>
+    <string name="No_Data">Not Found Data</string>
+    <string name="text_vault">Vault</string>
+    <string name="privacy_policy">https://securefolderapp.blogspot.com/2023/01/secure-folder-hide-image-vid.html</string>
+    <string name="feedback_email">dharmikbhensdadia1997@gmail.com</string>
+    <string name="error_null_cursor">Something went wrong!</string>
+    <string name="tital_intruder">Intruder</string>
+    <string name="Not_found_suspicious_text">Not found any suspicious activity of a stranger used the Smart Vault app</string>
+
+
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="french">French</string>
+    <string name="spanish">Spanish</string>
+    <string name="editor">Editor</string>
+    <string name="Bhasha_Board">Select Language</string>
+
+
+    <string name="selected_name">Selected</string>
+
+
+    <string name="Photos">Photos</string>
+    <string name="Videos">Videos</string>
+    <string name="Files">Files</string>
+    <string name="Browser">Private Web Browser</string>
+    <string name="Intruder_image">Intruder Image</string>
+    <string name="Settings">Settings</string>
+
+
+    <string name="tital_selfie">Selfie</string>
+    <string name="select_image">Select images</string>
+    <string name="select_video">Select videos</string>
+    <string name="text_select">Select</string>
+    <string name="tital_file_trash">File Trash</string>
+
+
+    <string name="exit_app_message">Want to exit?</string>
+    <string name="confirm_exit_message">Sure</string>
+    <string name="confirm_dismiss_message">No</string>
+    <string name="confirm_Rate_message">Rate Us</string>
+    <string name="Alert_Message_for_App">** Please Set Default Icon While App Update **</string>
+
+    <string name="give_sd_card_permission">System Required SD card Permisssions</string>
+    <string name="give_seconday_permission_btn">GRANT WRITE PERMISSION</string>
+    <string name="give_seconday_permission_message">Detected an SD Card in your Device. So, it would be requiring SD Card Permissions</string>
+    <string name="mismatched_psd">PIN not match please try again</string>
+    <string name="wrong_pwd">Wrong password, please try again</string>
+    <string name="text_security_question">Choose A Security Question</string>
+    <string name="security_question">Security Question</string>
+    <string name="security_answer">Enter Your Security Answer</string>
+    <string name="msg_answer">Please Write Correct Answer.</string>
+    <string name="msg_answer_valid">First character should not be Special character. Please enter valid answer name!"</string>
+    <string name="msg_wrong_answer">Please Write correct Answer.</string>
+    <string name="error_cannot_write">Cannot write image captured by camera.</string>
+    <string name="error_cannot_open">Cannot open camera.</string>
+    <string name="error_cannot_get_permission">Camera permission not available.</string>
+    <string name="error_not_having_camera">Your device does not have front camera.</string>
+    <string name="internet_message">Please check your internet connection</string>
+    <string name="my_browser">Safe Browser</string>
+    <string name="lable_bookmark_saved">Bookmark saved</string>
+    <string name="lable_delete_successful">Bookmark deleted</string>
+    <string name="title_activity_web">WebActivity</string>
+    <string name="tital_setting">Settings</string>
+    <string name="no_file">It Seems Empty, No File to Select</string>
+    <string name="rate_dialog_title" translatable="false">Enjoying Smart Vault App?</string>
+    <string name="rate_dialog_message" translatable="false">Tap a star to rate it in the App Store.</string>
+    <string name="rate_dialog_ok">Rate Now</string>
+    <string name="rate_dialog_no">Exit</string>
+    <string name="rate_app_zero_star_error">Choose the stars and tap on “Rate Now”.</string>
+    <string name="title_list_to_grid">List to grid</string>
+    <string name="menu_share">Share</string>
+    <string name="email_choose_from_client">Choose an email client from...</string>
+    <string name="loading_ads">Loading Ads...</string>
+
+
+    <string-array name="question_array_list">
+        <item>What\u0027s your nickname?</item>
+        <item>What\u0027s your favorite movie?</item>
+        <item>What\u0027s your father\u0027s name?</item>
+        <item>What\u0027s your mother\u0027s name?</item>
+        <item>in what town was your first job?</item>
+        <item>What\u0027s your dream job?</item>
+        <item>What\u0027s your birthday?</item>
+        <item>What\u0027s your dream girl/boy?</item>
+        <item>What\u0027s your pets name?</item>
+        <item>City you meet your spouse first?</item>
+    </string-array>
+
+    <string-array name="efp__sorting_types">
+        <item>By name, ascending</item>
+        <item>By name, descending</item>
+        <item>By size, ascending</item>
+        <item>By size, descending</item>
+        <item>By date, ascending</item>
+        <item>By date, descending</item>
+    </string-array>
+
+    <!--    <string name="ad">Ad</string>-->
+    <string name="install">INSTALL</string>
+    <string name="close">Close</string>
+
+    <string name="please_wait_msg">Please wait…</string>
+    <string name="connected_server_msg">Connected to server</string>
+    <string name="min_digit_msg">Enter minimum 4 digit</string>
+
+    <string name="dialog_cancel">Cancel</string>
+    <string name="permission_dialog_title">Permissions Require</string>
+    <string name="permission_dialog_msg">Permissions are compulsory to batter serve. You can grant them in app settings.</string>
+    <string name="permission_account_msg">App needs permission to read your accounts</string>
+    <string name="permission_dialog_ok">GO TO SETTINGS</string>
+    <string name="hide_success_msg">Hide successfully</string>
+    <string name="un_hide_success_msg">Un-hide successfully</string>
+    <string name="device_ad_enabled_msg">Device administrator enabled</string>
+    <string name="device_ad_disabled_msg">Device administrator disabled</string>
+
+
+    <string name="menu_rate">Rate Us</string>
+    <string name="menu_policy">Privacy Policy</string>
+    <string name="text_permission_desc">Allow Permission For Access Photos,Videos.Audios For App Functionality so proceed it</string>
+    <string name="Get_started">Click Get Started</string>
+    <string name="Allow_to_access">Allow Permission to access Photos/Videos </string>
+    <string name="Create_password">Create your password</string>
+    <string name="App_features">Lock Photos/Videos and Discover other interesting features</string>
+    <string name="text_add_new_photos">Add New Photos</string>
+    <string name="text_move_to_trash">Move to trash can</string>
+    <string name="text_save">Save</string>
+    <string name="text_un_hide">Unhide</string>
+    <string name="text_delete">Delete</string>
+
+    <string name="text_share">Share</string>
+
+
+    <string name="text_more">More</string>
+
+
+    <string name="text_restore">Restore</string>
+
+
+    <string name="forgot_password">Forgot Password?</string>
+
+
+    <string name="Ad">Ad</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="vector"
+    android:width="55dp"
+    android:height="55dp"
+    android:viewportWidth="55"
+    android:viewportHeight="55">
+    <group android:name="group_2">
+        <group android:name="group_1">
+            <path
+                android:name="path"
+                android:fillColor="#ffffff"
+                android:pathData="M 28 3 C 21.372 3 15.009 5.636 10.322 10.322 C 5.636 15.009 3 21.372 3 28 C 3 34.628 5.636 40.991 10.322 45.678 C 15.009 50.364 21.372 53 28 53 C 34.628 53 40.991 50.364 45.678 45.678 C 50.364 40.991 53 34.628 53 28 C 53 21.372 50.364 15.009 45.678 10.322 C 40.991 5.636 34.628 3 28 3 Z"
+                android:strokeWidth="1" />
+            <group android:name="group">
+                <path
+                    android:name="path_1"
+                    android:fillColor="#4280ef"
+                    android:pathData="M 44.742 28.627 C 44.737 27.458 44.637 26.292 44.442 25.139 L 28.204 25.139 L 28.204 31.777 L 37.504 31.777 C 37.318 32.836 36.916 33.846 36.322 34.743 C 35.729 35.64 34.956 36.405 34.054 36.99 L 39.604 41.303 C 41.295 39.664 42.626 37.69 43.51 35.507 C 44.395 33.324 44.814 30.981 44.742 28.627 Z"
+                    android:strokeWidth="1" />
+                <path
+                    android:name="path_2"
+                    android:fillColor="#34a353"
+                    android:pathData="M 28.204 45.428 C 32.394 45.542 36.474 44.052 39.604 41.265 L 34.054 36.99 C 32.269 38.135 30.176 38.709 28.057 38.636 C 25.937 38.563 23.889 37.846 22.187 36.581 C 20.485 35.315 19.209 33.561 18.528 31.552 L 12.828 35.94 C 14.259 38.792 16.455 41.19 19.17 42.866 C 21.885 44.541 25.014 45.428 28.204 45.428 Z"
+                    android:strokeWidth="1" />
+                <path
+                    android:name="path_3"
+                    android:fillColor="#f6b704"
+                    android:pathData="M 18.529 31.515 C 17.817 29.373 17.817 27.057 18.529 24.915 L 12.829 20.49 C 11.627 22.888 11.001 25.533 11.001 28.215 C 11.001 30.898 11.627 33.543 12.829 35.941 Z"
+                    android:strokeWidth="1" />
+                <path
+                    android:name="path_4"
+                    android:fillColor="#e54335"
+                    android:pathData="M 28.204 17.826 C 30.657 17.793 33.027 18.723 34.804 20.414 L 39.717 15.464 C 36.599 12.55 32.472 10.95 28.204 11.002 C 25.014 11.002 21.885 11.889 19.17 13.564 C 16.455 15.239 14.259 17.637 12.828 20.489 L 18.528 24.914 C 19.199 22.87 20.493 21.087 22.228 19.816 C 23.963 18.545 26.053 17.849 28.204 17.826 Z"
+                    android:strokeWidth="1" />
+            </group>
+        </group>
+    </group>
+</vector>

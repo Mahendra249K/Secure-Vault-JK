@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources>
+
+<!--  <string name="app_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
+  <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
+<!--  <string name="firebase_name" translatable="false">Secure folder : Hide Image Vid</string>-->
+  <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>
+  <string name="Onesignal_id" translatable="false">600c6786-1ec0-45a8-ad21-7c691a3c9e0d</string>
+  <string name="text_photo">Prent</string>
+  <string name="app_name_short">Smart Vault</string>
+  <string name="load_ads_text">This action can contain ads</string>
+  <string name="app_icon_name_change">Verander App-ikoon &amp; Naam</string>
+  <string name="Change_Launguage">Verander Taal</string>
+  <string name="select_Different_launguage">Kies Verskillende taal</string>
+
+  <string name="Change_Password">Verander Wagwoord</string>
+  <string name="Intruder_Security">Indringer Sekuriteit</string>
+  <string name="Enter_Password">Sleutel wagwoord in</string>
+  <string name="Enter_your_old_pin">Voer jou ou pen in</string>
+  <string name="Enter_your_new_password">Voer nuwe wagwoord in</string>
+  <string name="reagain_Enter_your_new_password">Voer weer wagwoord in</string>
+  <string name="Please_remember_this_password">Onthou asseblief hierdie wagwoord</string>
+  <string name="Submit_text">Indien</string>
+  <string name="Enter_Answer_Here">Voer antwoord hier in</string>
+
+
+
+
+
+
+
+  <string name="Keypad_Touch_Vibration">Sleutelbord raak vibrasie</string>
+
+
+  <string name="text_video">Video</string>
+  <string name="text_No_Data">Druk + knoppie om data te kies</string>
+  <string name="No_Data">Nie gevind data nie</string>
+  <string name="text_vault">Kluis</string>
+  <string name="privacy_policy">Https://securefolderapp.blogspot.com/2023/01/secure-folder-hide-image-vid.html</string>
+  <string name="feedback_email">Dharmikbhensdadia1997@gmail.com</string>
+  <string name="error_null_cursor">Iets het verkeerd geloop!</string>
+  <string name="tital_intruder">Indringer</string>
+  <string name="Not_found_suspicious_text">Geen verdagte aktiwiteit gevind van \'n vreemdeling wat die Smart Vault-toepassing gebruik het nie</string>
+  <string name="english">Engels</string>
+  <string name="hindi">Hindi</string>
+  <string name="indonesia">Indonesië</string>
+  <string name="portuguese">Portugees</string>
+  <string name="french">Frans</string>
+  <string name="spanish">Spaans</string>
+  <string name="editor">Redakteur</string>
+  <string name="Bhasha_Board">Kies taal</string>
+  <string name="selected_name">Gekies</string>
+  <string name="Photos">Foto\'s</string>
+  <string name="Videos">Video\'s</string>
+  <string name="Files">Lêers</string>
+  <string name="Browser">Privaat webblaaier</string>
+  <string name="Intruder_image">Indringer beeld</string>
+  <string name="Settings">Instellings</string>
+  <string name="tital_selfie">Selfie</string>
+  <string name="select_image">Kies beelde</string>
+  <string name="select_video">Kies video\'s</string>
+  <string name="text_select">Kies</string>
+  <string name="tital_file_trash">Lêer asblik</string>
+  <string name="exit_app_message">Wil jy uitgaan?</string>
+  <string name="confirm_exit_message">Sekerlik</string>
+  <string name="confirm_dismiss_message">Geen</string>
+  <string name="confirm_Rate_message">Gradeer ons</string>
+  <string name="Alert_Message_for_App">** Stel asseblief verstekikoon tydens toepassingopdatering **</string>
+  <string name="give_sd_card_permission">Stelsel Vereiste SD-kaarttoestemmings</string>
+  <string name="give_seconday_permission_btn">GEE SKRYFTOESTEMMING TOE</string>
+  <string name="give_seconday_permission_message">Bespeur \'n SD-kaart in jou toestel. Dit sou dus SD-kaarttoestemmings vereis</string>
+  <string name="mismatched_psd">PIN stem nie ooreen nie, probeer asseblief weer</string>
+  <string name="wrong_pwd">Verkeerde wagwoord, probeer asseblief weer</string>
+  <string name="text_security_question">Kies \'n sekuriteitsvraag</string>
+  <string name="security_question">sekuriteitsvraag</string>
+
+  <string name="security_answer">Voer jou sekuriteitsantwoord in</string>
+  <string name="msg_answer">Skryf asseblief die korrekte antwoord.</string>
+  <string name="msg_answer_valid">Eerste karakter moet nie Spesiale karakter wees nie. Voer asseblief \'n geldige antwoordnaam in!\"</string>
+  <string name="msg_wrong_answer">Skryf asseblief korrekte antwoord.</string>
+  <string name="error_cannot_write">Kan nie beeld skryf wat deur kamera vasgevang is nie.</string>
+  <string name="error_cannot_open">Kan nie kamera oopmaak nie.</string>
+  <string name="error_cannot_get_permission">Kameratoestemming nie beskikbaar nie.</string>
+  <string name="error_not_having_camera">Jou toestel het nie voorkamera nie.</string>
+  <string name="internet_message">Gaan asseblief jou internetverbinding na</string>
+  <string name="my_browser">Veilige blaaier</string>
+  <string name="lable_bookmark_saved">Boekmerk gestoor</string>
+  <string name="lable_delete_successful">Boekmerk is uitgevee</string>
+  <string name="title_activity_web">Webaktiwiteit</string>
+  <string name="tital_setting">Instellings</string>
+  <string name="no_file">Dit lyk leeg, geen lêer om te kies nie</string>
+
+  <string name="rate_dialog_ok">Rate Now</string>
+  <string name="rate_dialog_no">Verlaat</string>
+  <string name="rate_app_zero_star_error">Kies die sterre en tik op \"Beoordeel nou\".</string>
+  <string name="title_list_to_grid">Lys na rooster</string>
+  <string name="menu_share">Deel</string>
+  <string name="email_choose_from_client">Kies \'n e-poskliënt uit...</string>
+  <string name="loading_ads">Laai tans advertensies...</string>
+  <string-array name="question_array_list"> 
+    <item>Wat is jou bynaam?</item>  
+    <item>Wat is jou gunsteling fliek?</item>  
+    <item>Wat is jou pa se naam?</item>  
+    <item>Wat is jou ma se naam?</item>  
+    <item>In watter dorp was jou eerste werk?</item>  
+    <item>Wat is jou droomwerk?</item>  
+    <item>Wat is jou verjaarsdag?</item>  
+    <item>Wat is jou droommeisie/seun?</item>  
+    <item>Wat is jou troeteldier se naam?</item>  
+    <item>Stad ontmoet jy jou gade eerste?</item> 
+  </string-array>
+  <string-array name="efp__sorting_types"> 
+    <item>By naam, opgaande</item>  
+    <item>By die naam, dalende</item>  
+    <item>Volgens grootte, stygend</item>  
+    <item>Volgens grootte, dalende</item>  
+    <item>Volgens datum, stygend</item>  
+    <item>Volgens datum, dalende</item> 
+  </string-array>
+  <string name="install">INSTALLEER</string>
+  <string name="close">Naby</string>
+  <string name="please_wait_msg">Wag asseblief…</string>
+  <string name="connected_server_msg">Gekoppel aan bediener</string>
+  <string name="min_digit_msg">Voer minimum 4 syfers in</string>
+  <string name="dialog_cancel">Kanselleer</string>
+  <string name="permission_dialog_title">Toestemmings vereis</string>
+  <string name="permission_dialog_msg">Toestemmings is verpligtend om kolf te bedien. Jy kan hulle toestaan ​​in programinstellings.</string>
+  <string name="permission_account_msg">Program benodig toestemming om jou rekeninge te lees</string>
+  <string name="permission_dialog_ok">GAAN NA INSTELLINGS</string>
+  <string name="hide_success_msg">Versteek suksesvol</string>
+  <string name="un_hide_success_msg">Ontsteek suksesvol</string>
+  <string name="device_ad_enabled_msg">Toesteladministrateur geaktiveer</string>
+  <string name="device_ad_disabled_msg">Toesteladministrateur is gedeaktiveer</string>
+  <string name="menu_rate">Gradeer ons</string>
+  <string name="menu_policy">Privaatheidsbeleid</string>
+  <string name="text_permission_desc">Gee toestemming vir toegang tot foto\'s, video\'s. oudio\'s vir toepassingfunksionaliteit, so gaan voort</string>
+  <string name="Get_started">Klik Begin</string>
+  <string name="Allow_to_access">Gee toestemming om toegang tot foto\'s/video\'s te verkry</string>
+  <string name="Create_password">Skep jou wagwoord</string>
+  <string name="App_features">Sluit foto\'s/video\'s en ontdek ander interessante kenmerke</string>
+  <string name="text_add_new_photos">Voeg nuwe foto\'s by</string>
+  <string name="text_move_to_trash">Skuif na asblik</string>
+  <string name="text_save">Stoor</string>
+  <string name="text_un_hide">Ontsteek</string>
+  <string name="text_delete">Vee uit</string>
+  <string name="text_share">Deel</string>
+  <string name="text_more">Meer</string>
+  <string name="text_restore">Herstel</string>
+  <string name="forgot_password">Wagwoord vergeet?</string>
+  <string name="Ad">Ad</string>
+</resources>

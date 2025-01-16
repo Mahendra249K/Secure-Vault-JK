@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/menu_bord_share"
+            android:icon="@drawable/share"
+            android:visible="false"
+            android:title="@string/menu_share" />
+        <item
+            android:id="@+id/menu_bord_rate"
+            android:icon="@drawable/ic_star_black"
+            android:title="@string/menu_rate" />
+
+        <item
+            android:id="@+id/menu_bord_policy"
+            android:icon="@drawable/icm_privacy_polic"
+            android:title="@string/menu_policy" />
+</menu>

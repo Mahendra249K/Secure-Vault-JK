@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/sky_light"
+    android:layout_height="match_parent"
+    tools:context=".dashex.NewAppAddition">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentTop="true"
+                android:elevation="1dp">
+                <include
+                    android:id="@+id/main_toolbar"
+                    layout="@layout/it_tool_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.appbar.AppBarLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/llNativeLarge">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/search_engine"
+                    ></ImageView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:textColorHint="@color/wooden_dark_text"
+                    app:boxStrokeColor="@color/wooden_dark_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/new_app_et_tital"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Title"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/wooden_dark_text" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:textColorHint="@color/wooden_dark_text"
+                    app:boxStrokeColor="@color/wooden_dark_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/new_app_et_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="URL"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/wooden_dark_text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/llNativeLarge"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_232sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:orientation="vertical">
+        <include layout="@layout/ad_view_big" />
+    </FrameLayout>
+
+
+</RelativeLayout>

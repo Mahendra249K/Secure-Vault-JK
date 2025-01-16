@@ -1,0 +1,98 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+version = "1.2.1"
+
+android {
+    compileSdkVersion 33
+    namespace 'com.Joaquin.thiago.Imogen'
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions{
+        abortOnError false
+    }
+}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
+}
+
+def gitUrl = 'https://github.com/jiajunhui/MediaLoader.git'
+def siteUrl = 'https://github.com/jiajunhui/MediaLoader'
+group = "com.jiajunhui.xapp.medialoader"
+//install {
+//    repositories.mavenInstaller {
+//        pom {
+//            project {
+//                packaging 'jar'
+//                description 'Use this library , you can loadAsync pictures,videos,audios very fast in Phone Storage.'
+//                name 'MediaLoader'
+//                url siteUrl
+//                licenses {
+//                    license {
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                        name 'The Apache Software License, Version 2.0'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id 'media-loader'
+//                        name 'junhui jia'
+//                        email 'jiajunhuiplay@gmail.com'
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//                }
+//            }
+//        }
+//    }
+//}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    options.encoding = 'UTF-8'
+    source = 'src/main/java'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "Tools"
+        name = "MediaLoader"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}

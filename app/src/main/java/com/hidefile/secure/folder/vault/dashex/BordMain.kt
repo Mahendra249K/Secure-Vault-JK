@@ -303,7 +303,7 @@ class BordMain : FoundationActivity() {
                 appList[arrAppLinks[i]] =
                     RecentList(arrAppIcons1[i], arrAppLinks[i], arrAppTitle[i])
             }
-            SupPref.saveAppData(applicationContext, appList)
+//            SupPref.saveAppData(applicationContext, appList)
             SupPref.setBooleanValue(mContext, SupPref.isFirstTime, false)
         }
     }

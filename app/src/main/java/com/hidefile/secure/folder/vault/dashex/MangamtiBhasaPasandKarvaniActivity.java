@@ -23,13 +23,13 @@ import java.util.Locale;
 public class MangamtiBhasaPasandKarvaniActivity extends FoundationActivity {
     private boolean ShuConfirgurationMathiChe = false;
     private String BhashaKod = "";
-ActivityMangamtiBhasaPasandKarvaniBinding binding;
+    ActivityMangamtiBhasaPasandKarvaniBinding binding;
     private View back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityMangamtiBhasaPasandKarvaniBinding.inflate(getLayoutInflater());
+        binding = ActivityMangamtiBhasaPasandKarvaniBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ShuConfirgurationMathiChe = getIntent().getBooleanExtra("ShuConfirgurationMathiChe", false);
 
@@ -84,7 +84,7 @@ ActivityMangamtiBhasaPasandKarvaniBinding binding;
             bhashaList.add(0, defaultBhasha);
         }
 
-        back =findViewById(R.id.back);
+        back = findViewById(R.id.back);
 
         back.setOnClickListener(v -> {
             onBackPressed();
@@ -109,47 +109,41 @@ ActivityMangamtiBhasaPasandKarvaniBinding binding;
     }
 
 
-
-
-
-
-
     private void gotoFinalActivity() {
 //        if (!ShuConfirgurationMathiChe) {
-            if (SupPref.getString(MangamtiBhasaPasandKarvaniActivity.this, SupPref.launguageBack,true)) {
-                    startActivity(new Intent(MangamtiBhasaPasandKarvaniActivity.this, PermitAccess.class));
-                    finish();
-            }else {
+        if (SupPref.getString(MangamtiBhasaPasandKarvaniActivity.this, SupPref.launguageBack, true)) {
+            startActivity(new Intent(MangamtiBhasaPasandKarvaniActivity.this, PermitAccess.class));
+            finish();
+        } else {
             String code = PreUpyogi.getLanguageCode(MangamtiBhasaPasandKarvaniActivity.this);
             if (code != null && !code.equals(BhashaKod)) {
-                Intent intent = new Intent(MangamtiBhasaPasandKarvaniActivity.this,Configuration.class);
+                Intent intent = new Intent(MangamtiBhasaPasandKarvaniActivity.this, Configuration.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
-            }
-            else{
-                Toast toast =   Toast.makeText(MangamtiBhasaPasandKarvaniActivity.this, getString(R.string.select_Different_launguage), Toast.LENGTH_SHORT);
+            } else {
+                Toast toast = Toast.makeText(MangamtiBhasaPasandKarvaniActivity.this, getString(R.string.select_Different_launguage), Toast.LENGTH_SHORT);
 //                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.setGravity(Gravity.CENTER| Gravity.BOTTOM, 0, 20);
+                toast.setGravity(Gravity.CENTER | Gravity.BOTTOM, 0, 20);
                 toast.show();
             }
         }
 
     }
+
     @Override
     public void onBackPressed() {
-        if (SupPref.getString(MangamtiBhasaPasandKarvaniActivity.this, SupPref.launguageBack,true)) {
+        if (SupPref.getString(MangamtiBhasaPasandKarvaniActivity.this, SupPref.launguageBack, true)) {
 //        if (!ShuConfirgurationMathiChe) {
             startActivity(new Intent(MangamtiBhasaPasandKarvaniActivity.this, PermitAccess.class));
             finish();
-        }else {
-                Intent intent = new Intent(MangamtiBhasaPasandKarvaniActivity.this,Configuration.class);
-                startActivity(intent);
-                finish();
-            }
+        } else {
+            Intent intent = new Intent(MangamtiBhasaPasandKarvaniActivity.this, Configuration.class);
+            startActivity(intent);
+            finish();
         }
-
-
-
     }
+
+
+}

@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,8 +54,6 @@ public class SupPref {
     public static final String SelfieImageView = "SelfieImageView";
 
 
-
-
     public static final String isFromPin = "isFromPin";
     public static final String isRatting = "isRatting";
     public static final String pref_AppData = "pref_AppData";
@@ -69,21 +68,18 @@ public class SupPref {
         editor.apply();
     }
 
-    public static void putString(Context context, String key,Boolean defaultValue) {
+    public static void putString(Context context, String key, Boolean defaultValue) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = AppPreference.edit();
 //        editor.putString(key,defaultValue);
-        editor.putBoolean(key,defaultValue);
+        editor.putBoolean(key, defaultValue);
         editor.apply();
     }
 
     public static boolean getString(Context context, String key, Boolean defaultValue) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return AppPreference.getBoolean(key,defaultValue);
+        return AppPreference.getBoolean(key, defaultValue);
     }
-
-
-
 
 
     public static void saveToUserDefaults(Context context, String key, String value) {
@@ -92,43 +88,52 @@ public class SupPref {
         editor.putString(key, value);
         editor.apply();
     }
+
     public static int getIntValue(Context context, String key, int defaultValue) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         return AppPreference.getInt(key, defaultValue);
     }
+
     public static String getHideUri(Context context) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         String str = AppPreference.getString(isStorageServicePrm, "");
         return str;
     }
+
     public static String getburyUri(Context context) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         return AppPreference.getString(isStorageServicePrm, "");
     }
+
     public static String getValue(Context context, String key, String defaultValue) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         return AppPreference.getString(key, defaultValue);
     }
+
     public static boolean getBooleanValue(Context context, String key, boolean defaultValue) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         return AppPreference.getBoolean(key, defaultValue);
     }
+
     public static void setBooleanValue(Context context, String key, boolean value) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = AppPreference.edit();
         editor.putBoolean(key, value);
         editor.apply();
     }
+
     public static void setIntValue(Context context, String key, int value) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = AppPreference.edit();
         editor.putInt(key, value);
         editor.apply();
     }
+
     public static String getFromUserDefaults(Context context, String key) {
         SharedPreferences preferences = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         return preferences.getString(key, "");
     }
+
     public static LinkedHashMap<String, RecentList> getAppDataMap(Context context) {
         String jsonStroing = getFromUserDefaults(context, pref_AppData);
         Gson gson = new Gson();
@@ -136,6 +141,7 @@ public class SupPref {
         }.getType();
         return gson.fromJson(jsonStroing, type);
     }
+
     public static ArrayList<RecentList> getAppData(Context context) {
         ArrayList<RecentList> recentListitems = new ArrayList<>();
         String jsonStroing = getFromUserDefaults(context, pref_AppData);
@@ -151,6 +157,7 @@ public class SupPref {
         }
         return recentListitems;
     }
+
     public static void saveAppData(Context context, LinkedHashMap<String, RecentList> hMap) {
         Gson gson = new Gson();
         Type type = new TypeToken<LinkedHashMap<String, RecentList>>() {
@@ -159,6 +166,8 @@ public class SupPref {
         saveToUserDefaults(context, pref_AppData, json);
         System.out.println(json);
     }
+
+
 
     public static void putHideUri(Context context, String value) {
         AppPreference = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);

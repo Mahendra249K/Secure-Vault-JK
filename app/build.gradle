@@ -14,8 +14,8 @@ android {
         applicationId "com.hidefile.secure.folder.vault"
         minSdkVersion 23
         versionCode 129
-        versionName "1.29"
-//        versionName "development"
+//        versionName "1.29"
+        versionName "development"
         targetSdkVersion 33
         multiDexEnabled true
         setProperty("archivesBaseName", "Secure_Folder_$versionName.$versionCode")
@@ -113,7 +113,6 @@ dependencies {
     implementation 'com.google.api-client:google-api-client-android:1.26.0'
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.loopj.android:android-async-http:1.4.9'
-//    implementation 'com.onesignal:OneSignal:4.8.2'
     implementation 'me.aflak.libraries:fingerprint:2.5.3'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'com.github.vihtarb:tooltip:0.2.0'
@@ -129,21 +128,17 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.3'
     implementation project(path: ':CoXavier')
     implementation project(path: ':Schuyler')
-    //app metrica
-//    implementation 'com.yandex.android:mobmetricalib:5.2.0'
+
     //Facebook Ads
     implementation 'com.facebook.android:audience-network-sdk:6.17.0'
     implementation 'com.facebook.android:facebook-android-sdk:16.0.0'
-//    implementation 'com.google.ads.mediation:  :6.17.0.0'
     implementation 'com.applovin.mediation:facebook-adapter:6.17.0.0'
     implementation 'com.facebook.infer.annotation:infer-annotation:0.18.0'
 
 
     implementation 'com.google.android.exoplayer:exoplayer:2.10.1'
-//    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
     implementation 'com.applovin:applovin-sdk:11.4.2'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'com.yandex.android:mobmetricalib:5.2.0'
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'

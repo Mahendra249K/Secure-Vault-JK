@@ -30,14 +30,12 @@ import com.hidefile.secure.folder.vault.cluecanva.HandPrmt.OnListener
 import com.hidefile.secure.folder.vault.cluecanva.SupPref
 import java.io.File
 
-class PermitAccess :FoundationActivity(), View.OnClickListener {
+class PermitAccess : FoundationActivity(), View.OnClickListener {
     private val REQUEST_HIDE_PHOTOS = 1996
     var resultLauncher: ActivityResultLauncher<Intent>? = null
     var btnGrant: Button? = null
     var tvDontAllow: TextView? = null
     var idNative = ""
-
-
 
 
     @SuppressLint("MissingInflatedId")
@@ -53,12 +51,14 @@ class PermitAccess :FoundationActivity(), View.OnClickListener {
         }
         init()
     }
+
     fun init() {
         btnGrant = findViewById(R.id.allowPermissionBtn)
         setViewAccordingPermission()
         btnGrant?.setOnClickListener(this)
         tvDontAllow?.setOnClickListener(this)
     }
+
     private fun onRequestPermit() {
         HandPrmt.getInstance().requestPermissions(this, object : OnListener {
             override fun onPermissionGranted() {
@@ -66,6 +66,7 @@ class PermitAccess :FoundationActivity(), View.OnClickListener {
                 startActivity(mainIntent)
                 finish()
             }
+
             override fun onPermissionDenied() {}
             override fun onOpenSettings() {
                 val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
@@ -110,14 +111,14 @@ class PermitAccess :FoundationActivity(), View.OnClickListener {
             if (data != null && data.data != null) {
                 val treeUri = data.data
                 contentResolver.takePersistableUriPermission(
-                    treeUri!!,
-                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                    treeUri!!, Intent.FLAG_GRANT_WRITE_URI_PERMISSION
                 )
                 SupPref.putHideUri(this, treeUri.toString())
                 btnGrant!!.performClick()
             }
         }
     }
+
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private fun onRequest() {
         val storeFile = File(
@@ -139,14 +140,14 @@ class PermitAccess :FoundationActivity(), View.OnClickListener {
                         ).endsWith(".StayHide")
                     ) {
                         askPermit(
-                            this@PermitAccess,
-                            Environment.DIRECTORY_PICTURES + "/.StayHide/"
+                            this@PermitAccess, Environment.DIRECTORY_PICTURES + "/.StayHide/"
                         )
                     }
                 }
             }
         }
     }
+
     @RequiresApi(api = Build.VERSION_CODES.Q)
     fun askPermit(context: Activity, targetDirectory: String) {
         var targetDirectory = targetDirectory
@@ -166,6 +167,7 @@ class PermitAccess :FoundationActivity(), View.OnClickListener {
         intent.putExtra("android.provider.extra.INITIAL_URI", uri)
         context.startActivityForResult(intent, REQUEST_HIDE_PHOTOS)
     }
+
     private fun setViewAccordingPermission() {
         val permissionCamera = Manifest.permission.CAMERA
         if (VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -173,18 +175,22 @@ class PermitAccess :FoundationActivity(), View.OnClickListener {
             val permissionVideo = Manifest.permission.READ_MEDIA_VIDEO
             val permissionImage = Manifest.permission.READ_MEDIA_IMAGES
             val permissionWriteStorage = Manifest.permission.WRITE_EXTERNAL_STORAGE
-            checkCallingOrSelfPermission(permissionAudio) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionVideo) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionImage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
-                permissionCamera) == PackageManager.PERMISSION_GRANTED &&   checkCallingOrSelfPermission(permissionWriteStorage) == PackageManager.PERMISSION_GRANTED
+            checkCallingOrSelfPermission(permissionAudio) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
+                permissionVideo
+            ) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionImage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
+                permissionCamera
+            ) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
+                permissionWriteStorage
+            ) == PackageManager.PERMISSION_GRANTED
         } else {
             val permissionWriteStorage = Manifest.permission.WRITE_EXTERNAL_STORAGE
             val permissionReadStorage = Manifest.permission.READ_EXTERNAL_STORAGE
-            checkCallingOrSelfPermission(permissionWriteStorage) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionReadStorage) == PackageManager.PERMISSION_GRANTED
-                    && checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED
+            checkCallingOrSelfPermission(permissionWriteStorage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
+                permissionReadStorage
+            ) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED
         }
     }
+
     override fun onClick(v: View) {
         when (v.id) {
             R.id.allowPermissionBtn -> if (VERSION.SDK_INT >= Build.VERSION_CODES.R) {

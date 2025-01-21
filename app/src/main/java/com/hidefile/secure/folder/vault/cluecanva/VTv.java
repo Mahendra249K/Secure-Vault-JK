@@ -71,9 +71,8 @@ public class VTv extends androidx.appcompat.widget.AppCompatTextView {
         super.setTextColor(oriColor);
     }
     public void setSpannableText(String textOne, String textTwo) {
-        //todo
-//        Spannable spanText = EntryAux.getSpannableForTwoStrings(mContext, textOne, textTwo, R.font.terresa, R.font.terresa);
-//        setText(spanText);
+        Spannable spanText = EntryAux.getSpannableForTwoStrings(mContext, textOne, textTwo, R.font.terresa, R.font.terresa);
+        setText(spanText);
     }
     @Override
     protected void onDraw(Canvas canvas) {

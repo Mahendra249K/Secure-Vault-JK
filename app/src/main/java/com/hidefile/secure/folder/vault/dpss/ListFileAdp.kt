@@ -132,24 +132,22 @@ class ListFileAdp(var mContext: Context, private var mediaFiles: ArrayList<TreeR
 
     companion object {
         fun getFileIcon(extention: String?): Int {
-            //todo
-//            when (extention) {
-//                "apkbin", "apk" -> return R.drawable.vi_apk
-//                "pdf", "pdfbin" -> return R.drawable.vi_pdf
-//                "doc", "docx", "docbin", "docxbin" -> return R.drawable.vi_doc
-//                "ppt", "pptbin", "pptx", "pptxbin" -> return R.drawable.vi_ppt
-//                "xls", "xlsbin", "xlsx", "xlsxbin" -> return R.drawable.vi_xle
-//                "txt", "txtbin", "csv", "csvbin", "rtf", "rtfbin", "odt", "odtbin" -> return R.drawable.vi_txt
-//                "png", "pngbin" -> return R.drawable.vi_png
-//                "jpg", "jpgbin", "svg", "svgbin", "bmp", "bmpbin" -> return R.drawable.vi_jpg
-//                "gif", "gifbin" -> return R.drawable.vi_gif
-//                "mp4", "mp4bin", "3gp", "3gpbin", "3gpp", "3gppbin", "3gpp2", "3gpp2bin", "mpeg", "mpegpng", "mkv", "mkvpng", "mov", "movpng" -> return R.drawable.vi_video
-//                "aac", "aacbin", "flac", "flacbin", "m4a", "m4abin", "mp3", "mp3bin", "oga", "ogabin", "wav", "wavbin", "wma", "wmabin" -> return R.drawable.vi_mp3
-//                "html", "htmlbin", "html5", "html5bin", "htm", "htmbin", "css", "cssbin", "asp", "aspbin" -> return R.drawable.vi_html
-//                "zip", "zipbin", "rar", "rarbin", "rar4", "rar4bin" -> return R.drawable.vi_zip
-//                else -> return R.drawable.vi_other
-//            }
-            return R.drawable.vi_other
+            when (extention) {
+                "apkbin", "apk" -> return R.drawable.vi_apk
+                "pdf", "pdfbin" -> return R.drawable.vi_pdf
+                "doc", "docx", "docbin", "docxbin" -> return R.drawable.vi_doc
+                "ppt", "pptbin", "pptx", "pptxbin" -> return R.drawable.vi_ppt
+                "xls", "xlsbin", "xlsx", "xlsxbin" -> return R.drawable.vi_xle
+                "txt", "txtbin", "csv", "csvbin", "rtf", "rtfbin", "odt", "odtbin" -> return R.drawable.vi_txt
+                "png", "pngbin" -> return R.drawable.vi_png
+                "jpg", "jpgbin", "svg", "svgbin", "bmp", "bmpbin" -> return R.drawable.vi_jpg
+                "gif", "gifbin" -> return R.drawable.vi_gif
+                "mp4", "mp4bin", "3gp", "3gpbin", "3gpp", "3gppbin", "3gpp2", "3gpp2bin", "mpeg", "mpegpng", "mkv", "mkvpng", "mov", "movpng" -> return R.drawable.vi_video
+                "aac", "aacbin", "flac", "flacbin", "m4a", "m4abin", "mp3", "mp3bin", "oga", "ogabin", "wav", "wavbin", "wma", "wmabin" -> return R.drawable.vi_mp3
+                "html", "htmlbin", "html5", "html5bin", "htm", "htmbin", "css", "cssbin", "asp", "aspbin" -> return R.drawable.vi_html
+                "zip", "zipbin", "rar", "rarbin", "rar4", "rar4bin" -> return R.drawable.vi_zip
+                else -> return R.drawable.vi_other
+            }
         }
 
         fun getStringSizeLengthFile(size: Long): String {

@@ -13,8 +13,6 @@ import com.hidefile.secure.folder.vault.cluecanva.RDbhp
 import com.hidefile.secure.folder.vault.cluecanva.SupPref
 import com.hidefile.secure.folder.vault.newmarketing.NetworkUtil
 import com.socialbrowser.socialmedianetwork.allinoneplace.ads.appOpenLifeCycleChange
-import com.yandex.metrica.YandexMetrica
-import com.yandex.metrica.YandexMetricaConfig
 import java.io.File
 
 class MyApplication : Application() {
@@ -57,11 +55,6 @@ class MyApplication : Application() {
 
         NetworkUtil.initNetwork(this)
 
-        val config: YandexMetricaConfig =
-            YandexMetricaConfig.newConfigBuilder(resources.getString(R.string.AppMetrica_id))
-                .build()
-        YandexMetrica.activate(applicationContext, config)
-        YandexMetrica.enableActivityAutoTracking(this)
 
         if (SupPref.getBooleanValue(this, SupPref.isDarkModeOn, false)) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)

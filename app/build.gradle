@@ -9,14 +9,14 @@ plugins {
 }
 android {
     namespace 'com.hidefile.secure.folder.vault'
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.hidefile.secure.folder.vault"
         minSdkVersion 23
         versionCode 129
 //        versionName "1.29"
         versionName "development"
-        targetSdkVersion 33
+        targetSdkVersion 34
         multiDexEnabled true
         setProperty("archivesBaseName", "Secure_Folder_$versionName.$versionCode")
 

@@ -34,7 +34,7 @@
             android:gravity="center"
             android:paddingStart="6dp"
             android:singleLine="true"
-            android:text="@string/app_name"
+            android:text="@string/app_setting_name"
             android:textColor="@color/wooden_dark_text"
             android:textSize="@dimen/sip_16"
             android:textStyle="bold" />

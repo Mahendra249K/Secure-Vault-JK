@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:paddingStart="6dp"
             android:singleLine="true"
-            android:text="@string/app_name"
+            android:text="@string/app_setting_name"
             android:textColor="@color/green_full_dark"
             android:gravity="center_vertical"
             android:layout_toRightOf="@id/iv_back"

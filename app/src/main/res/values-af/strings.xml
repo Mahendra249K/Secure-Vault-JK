@@ -3,8 +3,6 @@
 <!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
 <resources>
 
-<!--  <string name="app_name" translatable="false">Secure folder : Hide Image Vid</string>-->
-  <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
   <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
 <!--  <string name="firebase_name" translatable="false">Secure folder : Hide Image Vid</string>-->
   <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>

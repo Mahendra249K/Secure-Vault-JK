@@ -762,7 +762,7 @@ public class ToolsForVideoFAdp extends Fragment implements View.OnClickListener,
     }
 
     private Drive getDriveService(GoogleAccountCredential credential) {
-        return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).setApplicationName(getString(R.string.app_name)).build();
+        return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).setApplicationName(getString(R.string.app_setting_name)).build();
     }
 
     @Override

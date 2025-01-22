@@ -71,7 +71,7 @@
                 android:paddingRight="@dimen/dim_20"
                 android:paddingBottom="@dimen/dim_10"
                 android:text="@string/permission_dialog_ok"
-                android:textColor="@color/wooden_dark_text"
+                android:textColor="@color/white_default"
                 android:textSize="@dimen/sip_14"
                 android:textStyle="bold" />
 

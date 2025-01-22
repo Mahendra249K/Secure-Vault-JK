@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -29,14 +30,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.hidefile.secure.folder.vault.AdActivity.Common_Adm;
-//import com.hidefile.secure.folder.vault.BuildConfig;
 import com.hidefile.secure.folder.vault.R;
-import com.hidefile.secure.folder.vault.cluecanva.RDbhp;
-import com.hidefile.secure.folder.vault.cluecanva.TreeRoot;
 import com.hidefile.secure.folder.vault.cluecanva.ConfigureSetWise;
+import com.hidefile.secure.folder.vault.cluecanva.RDbhp;
 import com.hidefile.secure.folder.vault.cluecanva.TooRfl;
+import com.hidefile.secure.folder.vault.cluecanva.TreeRoot;
 import com.hidefile.secure.folder.vault.cluecanva.VTv;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -51,7 +51,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
     ListFileAdp imageListAdapter;
     private ActionMode actionMode;
     boolean isSelectedMode = false;
-    private String idInter = "";
+    private final String idInter = "";
 
 
     RelativeLayout relativeNativeLayout;
@@ -69,10 +69,12 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             layoutOptions.setVisibility(View.VISIBLE);
             return true;
         }
+
         @Override
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             return false;
         }
+
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             int i = item.getItemId();
@@ -85,6 +87,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             }
             return false;
         }
+
         @Override
         public void onDestroyActionMode(ActionMode mode) {
             if (countSelected > 0) {
@@ -94,6 +97,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             actionMode = null;
         }
     };
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,14 +121,11 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             iv_back.setOnClickListener(v -> getActivity().onBackPressed());
             getActivity().findViewById(R.id.iv_option).setVisibility(View.GONE);
         }
-        RDbhp = RDbhp.getInstance(context);
+        RDbhp = com.hidefile.secure.folder.vault.cluecanva.RDbhp.getInstance(context);
 
         Init();
         return view;
     }
-
-
-
 
 
     public void Init() {
@@ -180,6 +181,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             TooRfl.shareImage(context, fileList.get(position).getNewPath(), fileList.get(position).getDisplayName());
         }
     }
+
     @Override
     public void onImageItemLongClick(int position) {
         isSelectedMode = true;
@@ -194,6 +196,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             layoutOptions.setVisibility(View.GONE);
         }
     }
+
     private void toggleSelection(int position) {
         fileList.get(position).checked = !fileList.get(position).isChecked();
         if (fileList.get(position).checked) {
@@ -203,6 +206,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
         }
         imageListAdapter.notifyDataSetChanged();
     }
+
     private void deselectAll() {
         for (int i = 0, l = fileList.size(); i < l; i++) {
             fileList.get(i).checked = false;
@@ -212,6 +216,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
         countSelected = 0;
         imageListAdapter.notifyDataSetChanged();
     }
+
     private ArrayList<TreeRoot> getSelected() {
         ArrayList<TreeRoot> selectedImages = new ArrayList<>();
         for (int i = 0, l = fileList.size(); i < l; i++) {
@@ -221,9 +226,10 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
         }
         return selectedImages;
     }
+
     @SuppressLint("SetTextI18n")
     public void DeleteFiles(final Activity act) {
- BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(act, R.style.BottomSheetDialogTheme);
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(act, R.style.BottomSheetDialogTheme);
         View dialogView = View.inflate(act, R.layout.dig_delete, null);
         LottieAnimationView animationView = dialogView.findViewById(R.id.animation_view);
         AppCompatButton button_negative = dialogView.findViewById(R.id.btn_negative);
@@ -305,8 +311,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
                     RDbhp.deleteFileTrash(selected.get(i).getId());
                 } else {
                     File file = new File(selected.get(i).getNewPath());
-                    if (file.exists())
-                        file.delete();
+                    if (file.exists()) file.delete();
                     RDbhp.deleteFileItem(selected.get(i).getId());
                 }
                 fileList.remove(selected.get(i));
@@ -322,10 +327,11 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             Toast.makeText(context, "File Deleted Successfully", Toast.LENGTH_SHORT).show();
             if (actionMode != null)
 //                actionMode.finish();
-            countSelected = 0;
+                countSelected = 0;
             Init();
         }
     }
+
     public class RecoverFilesTask extends AsyncTask<String, Integer, String> {
         ProgressDialog pd;
 
@@ -342,6 +348,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             pd.setIndeterminate(true);
             pd.show();
         }
+
         @Override
         protected String doInBackground(String... strings) {
             ArrayList<TreeRoot> selected = getSelected();
@@ -351,6 +358,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             }
             return "null";
         }
+
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -359,7 +367,7 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
             Toast.makeText(context, "File Recovered To Album Successfully", Toast.LENGTH_SHORT).show();
             if (actionMode != null)
 //                actionMode.finish();
-            countSelected = 0;
+                countSelected = 0;
             Init();
         }
     }

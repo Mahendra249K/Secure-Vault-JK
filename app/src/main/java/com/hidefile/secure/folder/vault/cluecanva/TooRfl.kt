@@ -71,7 +71,7 @@ object TooRfl {
             mContext,
             Uri.fromFile(file)
         )
-        intent.putExtra(Intent.EXTRA_SUBJECT, mContext.resources.getString(R.string.app_name))
+        intent.putExtra(Intent.EXTRA_SUBJECT, mContext.resources.getString(R.string.app_setting_name))
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         intent.putExtra(Intent.EXTRA_STREAM, photoURI)
         mContext.startActivity(intent)
@@ -80,7 +80,7 @@ object TooRfl {
     @JvmStatic
     fun shareMultipleImages(mContext: Context, filesList: ArrayList<ListIdPic>, mimeType: String?) {
         val intent = Intent(Intent.ACTION_SEND_MULTIPLE)
-        intent.putExtra(Intent.EXTRA_SUBJECT, mContext.resources.getString(R.string.app_name))
+        intent.putExtra(Intent.EXTRA_SUBJECT, mContext.resources.getString(R.string.app_setting_name))
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         intent.type = mimeType
 

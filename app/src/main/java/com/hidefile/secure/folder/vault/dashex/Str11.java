@@ -321,34 +321,40 @@ public class Str11 extends AppCompatActivity {
             String permissionAudio = android.Manifest.permission.READ_MEDIA_AUDIO;
             String permissionVideo = android.Manifest.permission.READ_MEDIA_VIDEO;
             String permissionImage = android.Manifest.permission.READ_MEDIA_IMAGES;
+            String post_notifications = android.Manifest.permission.POST_NOTIFICATIONS;
             String permissionCamera = Manifest.permission.CAMERA;
+            String read_phone_state = Manifest.permission.READ_PHONE_STATE;
             if (  checkCallingOrSelfPermission(permissionAudio) == PackageManager.PERMISSION_GRANTED &&
                     checkCallingOrSelfPermission(permissionVideo) == PackageManager.PERMISSION_GRANTED &&
                     checkCallingOrSelfPermission(permissionImage) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED
+                    checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED &&
+                    checkCallingOrSelfPermission(post_notifications) == PackageManager.PERMISSION_GRANTED &&
+                    checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED
             ) {
                 isPermissionGranted = true;
             }
         } else {
+            String permissionCamera = android.Manifest.permission.CAMERA;
+            String read_phone_state = android.Manifest.permission.READ_PHONE_STATE;
+
             if (android.os.Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q) {
                 String permissionStorage = android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-                if (checkCallingOrSelfPermission(permissionStorage) == PackageManager.PERMISSION_GRANTED) {
+                String permissionStorageRead = android.Manifest.permission.READ_EXTERNAL_STORAGE;
+
+                if (checkCallingOrSelfPermission(permissionStorage) == PackageManager.PERMISSION_GRANTED &&
+                        checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED &&
+                        checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED &&
+                        checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
                     isPermissionGranted = true;
                 }
 
-                String permissionStorageRead = android.Manifest.permission.READ_EXTERNAL_STORAGE;
-                if (checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED) {
-                    isPermissionGranted = true;
-                }
             } else {
                 String permissionStorageRead = android.Manifest.permission.READ_EXTERNAL_STORAGE;
-                if (checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED) {
+                if (checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED &&
+                        checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED &&
+                        checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
                     isPermissionGranted = true;
                 }
-            }
-            String permissionCamera = android.Manifest.permission.CAMERA;
-            if (checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED) {
-                isPermissionGranted = true;
             }
         }
         return isPermissionGranted;

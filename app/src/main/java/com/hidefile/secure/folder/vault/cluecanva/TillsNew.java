@@ -13,26 +13,18 @@ import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
-
 import androidx.core.content.ContextCompat;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 
 public class TillsNew {
@@ -449,89 +441,7 @@ public class TillsNew {
         return c.getResources().getString(a);
     }
 
-    public String getStoragePaths(String StorageType) {
-        String Path = "";
-        List<StorageUtils.StorageInfo> data = StorageUtils.getStorageList();
 
-        //  StorageUtils.StorageInfo list = data.get(i);
-
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-
-            if (StorageType.equalsIgnoreCase("ExternalStorage")) {
-
-                try {
-                    StorageUtils.StorageInfo externalPaths = data.get(0);
-                    Path = externalPaths.getStoragePath();
-
-                    if (data.size() > 2) {
-                        Path = "/storage/sdcard0";
-                    } else if (data.size() == 2) // if SdCard not Atteched.
-                        Path = "Sdcard not found";
-                    else
-                        Path = "/storage/sdcard1";
-                } catch (Exception e) {
-                    Path = "Sdcard not found";
-                }
-
-
-            } else {
-                if (data.size() == 2) // if SdCard not Atteched.
-                    Path = "/storage/sdcard0";
-                else
-                    Path = "/storage/sdcard1";
-            }
-
-        } else {
-
-            if (StorageType.equalsIgnoreCase("ExternalStorage")) {
-                try {
-
-                    StorageUtils.StorageInfo externalPaths = data.get(1);
-                    Path = externalPaths.getStoragePath();
-
-                    String tmp = Path.substring(Path.lastIndexOf("/"));
-                    Path = "/storage" + tmp;
-                } catch (Exception e) {
-                    Path = "Sdcard not found";
-                }
-            } else {
-                StorageUtils.StorageInfo externalPaths = data.get(0);
-                Path = externalPaths.getStoragePath();
-            }
-        }
-        return Path;
-    }
-
-    public Bitmap GetIcon(Context mContext, String pkgname) {
-
-        Drawable icon = null;
-        try {
-
-            try {
-               /* ApplicationInfo app = mContext.getPackageManager().getApplicationInfo(pkgname, 0);
-                icon = mContext.getPackageManager().getApplicationIcon(app);*/
-
-                String APKFilePath = pkgname; //For example...
-                PackageManager pm = mContext.getPackageManager();
-                PackageInfo pi = pm.getPackageArchiveInfo(APKFilePath, 0);
-
-                // the secret are these two lines....
-                pi.applicationInfo.sourceDir = APKFilePath;
-                pi.applicationInfo.publicSourceDir = APKFilePath;
-
-                icon = pi.applicationInfo.loadIcon(pm);
-                //String   AppName = (String)pi.applicationInfo.loadLabel(pm);
-
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-        } catch (Exception e) {
-        }
-
-        return convertDrawableToBitmap(icon);
-    }
 
     public List<String> getStorageDirectories() {
 
@@ -668,112 +578,6 @@ public class TillsNew {
         return null;
     }
 
-    public static class StorageUtils {
-
-        private static final String TAG = "StorageUtils";
-
-        public static List<StorageInfo> getStorageList() {
-
-            List<StorageInfo> list = new ArrayList<StorageInfo>();
-            String def_path = Environment.getExternalStorageDirectory().getPath();
-            boolean def_path_removable = Environment.isExternalStorageRemovable();
-            String def_path_state = Environment.getExternalStorageState();
-            boolean def_path_available = def_path_state.equals(Environment.MEDIA_MOUNTED)
-                    || def_path_state.equals(Environment.MEDIA_MOUNTED_READ_ONLY);
-            boolean def_path_readonly = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED_READ_ONLY);
-
-            HashSet<String> paths = new HashSet<String>();
-            int cur_removable_number = 1;
-
-            if (def_path_available) {
-                paths.add(def_path);
-                list.add(0, new StorageInfo(def_path, def_path_readonly, def_path_removable, def_path_removable ? cur_removable_number++ : -1));
-            }
-
-            BufferedReader buf_reader = null;
-            try {
-                buf_reader = new BufferedReader(new FileReader("/proc/mounts"));
-                String line;
-
-                while ((line = buf_reader.readLine()) != null) {
-
-                    if (line.contains("vfat") || line.contains("/mnt")) {
-                        StringTokenizer tokens = new StringTokenizer(line, " ");
-                        String unused = tokens.nextToken(); //device
-                        String mount_point = tokens.nextToken(); //mount point
-                        if (paths.contains(mount_point)) {
-                            continue;
-                        }
-                        unused = tokens.nextToken(); //manager system
-                        List<String> flags = Arrays.asList(tokens.nextToken().split(",")); //flags
-                        boolean readonly = flags.contains("ro");
-
-                        if (line.contains("/dev/block/vold")) {
-                            if (!line.contains("/mnt/secure")
-                                    && !line.contains("/mnt/asec")
-                                    && !line.contains("/mnt/obb")
-                                    && !line.contains("/dev/mapper")
-                                    && !line.contains("tmpfs")) {
-                                paths.add(mount_point);
-                                list.add(new StorageInfo(mount_point, readonly, true, cur_removable_number++));
-                            }
-                        }
-                    }
-                }
-
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            } finally {
-                if (buf_reader != null) {
-                    try {
-                        buf_reader.close();
-                    } catch (IOException ex) {
-                    }
-                }
-            }
-            return list;
-        }
-
-        public static class StorageInfo {
-
-            public final String path;
-            public final boolean readonly;
-            public final boolean removable;
-            public final int number;
-
-            StorageInfo(String path, boolean readonly, boolean removable, int number) {
-                this.path = path;
-                this.readonly = readonly;
-                this.removable = removable;
-                this.number = number;
-            }
-
-            public int getStorageNumber() {
-                return number;
-            }
-
-            public String getStoragePath() {
-                return path;
-            }
-
-            public String getDisplayName() {
-                StringBuilder res = new StringBuilder();
-                if (!removable) {
-                    res.append("Internal SD card" + " Path :- " + path);
-                } else if (number > 1) {
-                    res.append("SD card " + number + " Path :- " + path);
-                } else {
-                    res.append("SD card" + " Path:- " + path);
-                }
-                if (readonly) {
-                    res.append(" (Read only)");
-                }
-                return res.toString();
-            }
-        }
-    }
 
     public static class Unit {
         String count;

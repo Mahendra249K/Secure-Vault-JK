@@ -4,8 +4,6 @@
 <resources>
 
 
-<!--  <string name="app_name" translatable="false">Secure folder : Hide Image Vid</string>-->
-  <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
 
   <!--  <string name="firebase_name" translatable="false">Secure folder : Hide Image Vid</string>-->
   <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>

@@ -14,7 +14,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 import com.hidefile.secure.folder.vault.AdActivity.SharedPref
 import com.hidefile.secure.folder.vault.R
-import com.hidefile.secure.folder.vault.cluecanva.SupPref
 import com.hidefile.secure.folder.vault.dpss.ToolsForFileTrashFAdp
 import com.hidefile.secure.folder.vault.dpss.ToolsForImageTrashFAdp
 import com.hidefile.secure.folder.vault.dpss.ToolsForVideoTrashFAdp
@@ -46,9 +45,7 @@ class TrashBin : FoundationActivity() {
         Init()
 
 
-
     }
-
 
 
     fun Init() {
@@ -57,12 +54,10 @@ class TrashBin : FoundationActivity() {
             androidFragment = ToolsForImageTrashFAdp()
             currentFragment = "ImageTrashFrag"
         } else if (Type.equals("trashvideos", ignoreCase = true)) {
-            androidFragment =
-                ToolsForVideoTrashFAdp()
+            androidFragment = ToolsForVideoTrashFAdp()
             currentFragment = "ToolsForVideoFAdp"
         } else if (Type.equals("trashfiles", ignoreCase = true)) {
-            androidFragment =
-                ToolsForFileTrashFAdp()
+            androidFragment = ToolsForFileTrashFAdp()
             currentFragment = "ToolsForFileFAdp"
         }
         replaceFragment(androidFragment)
@@ -72,7 +67,8 @@ class TrashBin : FoundationActivity() {
         fragmentManager = this.supportFragmentManager
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         fragmentTransaction.replace(R.id.trash_frame_layout, destFragment!!)
-        fragmentTransaction.commit() }
+        fragmentTransaction.commit()
+    }
 
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
@@ -80,17 +76,20 @@ class TrashBin : FoundationActivity() {
         }
         return super.onKeyDown(keyCode, event)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 true
             }
+
             else -> {
                 false
             }
         }
     }
+
     override fun onBackPressed() {
         setResult(Activity.RESULT_OK)
         when (currentFragment) {
@@ -99,51 +98,82 @@ class TrashBin : FoundationActivity() {
                 finish()
                 return
             }
+
             "ToolsForVideoFAdp" -> {
                 setResult(Activity.RESULT_OK)
                 finish()
                 return
             }
+
             "ToolsForFileFAdp" -> {
                 setResult(Activity.RESULT_OK)
                 finish()
                 return
             }
+
             else -> {}
         }
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    override fun onResume() {
-        super.onResume()
-        SharedPref.AppOpenShow = false
-        Log.d("Message","Resume");
+//    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+//    override fun onResume() {
+//        super.onResume()
+//        SharedPref.AppOpenShow = false
+//        Log.d("Message", "Resume")
+//
+//
+//    }
 
+//    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("Message", "onstart")
+//
+//        SharedPref.AppOpenShow = false
+//    }
 
+//    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("Message", "onpause")
+//
+//        SharedPref.AppOpenShow = false
+//    }
 
-    }
+//    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+//    override fun onStop() {
+//        super.onStop()
+//        Log.d("Message", "stop")
+//        SharedPref.AppOpenShow = false
+//
+//    }
+
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     override fun onStart() {
         super.onStart()
-        Log.d("Message","onstart");
+        Constant.isShowOpenAd = true
+        SharedPref.AppOpenShow = true
 
-        SharedPref.AppOpenShow = false
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    override fun onResume() {
+        super.onResume()
+        SharedPref.AppOpenShow = true
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     override fun onPause() {
         super.onPause()
-        Log.d("Message","onpause");
-
-        SharedPref.AppOpenShow = false
+        SharedPref.AppOpenShow = true
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     override fun onStop() {
         super.onStop()
-        Log.d("Message","stop");
-        SharedPref.AppOpenShow = false
-
+        SharedPref.AppOpenShow = true
+        Log.d("cycle", "stop")
     }
+
 }

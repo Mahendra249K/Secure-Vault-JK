@@ -13,6 +13,11 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.storage.StorageManager
 import android.provider.Settings
+import android.text.Html
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -20,11 +25,14 @@ import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
+import com.calldorado.Calldorado
 import com.hidefile.secure.folder.vault.AdActivity.SharedPref
 import com.hidefile.secure.folder.vault.R
+import com.hidefile.secure.folder.vault.calldorado.OverlayPermissionManager
 import com.hidefile.secure.folder.vault.cluecanva.HandPrmt
 import com.hidefile.secure.folder.vault.cluecanva.HandPrmt.OnListener
 import com.hidefile.secure.folder.vault.cluecanva.SupPref
@@ -35,6 +43,7 @@ class PermitAccess : FoundationActivity(), View.OnClickListener {
     var resultLauncher: ActivityResultLauncher<Intent>? = null
     var btnGrant: Button? = null
     var tvDontAllow: TextView? = null
+    var mTvPolicy: TextView? = null
     var idNative = ""
 
 
@@ -45,16 +54,52 @@ class PermitAccess : FoundationActivity(), View.OnClickListener {
         setContentView(R.layout.permit)
         SharedPref.AppOpenShow = true
         resultLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
+            StartActivityForResult()
         ) { result: ActivityResult ->
             onRequestPermit()
         }
         init()
+        setPrivacyPolicy()
+
+        val cdoConditions = Calldorado.getAcceptedConditions(this)
+
+        if (cdoConditions.containsKey(Calldorado.Condition.EULA)) {
+            if (java.lang.Boolean.TRUE == cdoConditions[Calldorado.Condition.EULA]) {
+                onBoardingSuccess()
+            } else {
+                val conditionsMap = HashMap<Calldorado.Condition, Boolean>()
+                conditionsMap[Calldorado.Condition.EULA] = true
+                conditionsMap[Calldorado.Condition.PRIVACY_POLICY] = true
+                Calldorado.acceptConditions(this, conditionsMap)
+                onBoardingSuccess()
+            }
+        }
+    }
+
+    private fun onBoardingSuccess() {
+        Calldorado.start(this)
+    }
+
+
+    private fun setPrivacyPolicy() {
+        val spannableString = SpannableString("Privacy Policy")
+        val foregroundSpan = ForegroundColorSpan(resources.getColor(R.color.colorPrimary))
+        spannableString.setSpan(
+            foregroundSpan, 0, spannableString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        mTvPolicy?.text = Html.fromHtml(
+            "By continuing, you accept and approve the <a href='" + getString(
+                R.string.privacy_policy_uri
+            ) + "'>" + spannableString + "</a>"
+        )
+        mTvPolicy?.movementMethod = LinkMovementMethod.getInstance()
+
     }
 
     fun init() {
+        mTvPolicy = findViewById(R.id.mTvPolicy)
         btnGrant = findViewById(R.id.allowPermissionBtn)
-        setViewAccordingPermission()
         btnGrant?.setOnClickListener(this)
         tvDontAllow?.setOnClickListener(this)
     }
@@ -62,9 +107,7 @@ class PermitAccess : FoundationActivity(), View.OnClickListener {
     private fun onRequestPermit() {
         HandPrmt.getInstance().requestPermissions(this, object : OnListener {
             override fun onPermissionGranted() {
-                val mainIntent = Intent(this@PermitAccess, Pswd::class.java)
-                startActivity(mainIntent)
-                finish()
+                moveDrawOverlays()
             }
 
             override fun onPermissionDenied() {}
@@ -75,6 +118,37 @@ class PermitAccess : FoundationActivity(), View.OnClickListener {
                 resultLauncher!!.launch(intent)
             }
         })
+    }
+
+    private fun movePswd() {
+        val mainIntent = Intent(this@PermitAccess, Pswd::class.java)
+        startActivity(mainIntent)
+        finish()
+    }
+
+    private fun moveDrawOverlays() {
+        val overlayPermissionManager = OverlayPermissionManager(this)
+        val intent = Intent(
+            Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse(
+                "package:$packageName"
+            )
+        )
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+        if (!overlayPermissionManager.isGranted) {
+            overlayPermissionManager.requestOverlay { overlayActivityResultLauncher.launch(intent) }
+        } else {
+            movePswd()
+        }
+    }
+
+
+    var overlayActivityResultLauncher = registerForActivityResult(
+        StartActivityForResult()
+    ) { result: ActivityResult? ->
+        if (Settings.canDrawOverlays(this@PermitAccess)) {
+            OverlayPermissionManager.shouldContinueThread = false
+            movePswd()
+        }
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -168,28 +242,7 @@ class PermitAccess : FoundationActivity(), View.OnClickListener {
         context.startActivityForResult(intent, REQUEST_HIDE_PHOTOS)
     }
 
-    private fun setViewAccordingPermission() {
-        val permissionCamera = Manifest.permission.CAMERA
-        if (VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val permissionAudio = Manifest.permission.READ_MEDIA_AUDIO
-            val permissionVideo = Manifest.permission.READ_MEDIA_VIDEO
-            val permissionImage = Manifest.permission.READ_MEDIA_IMAGES
-            val permissionWriteStorage = Manifest.permission.WRITE_EXTERNAL_STORAGE
-            checkCallingOrSelfPermission(permissionAudio) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
-                permissionVideo
-            ) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionImage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
-                permissionCamera
-            ) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
-                permissionWriteStorage
-            ) == PackageManager.PERMISSION_GRANTED
-        } else {
-            val permissionWriteStorage = Manifest.permission.WRITE_EXTERNAL_STORAGE
-            val permissionReadStorage = Manifest.permission.READ_EXTERNAL_STORAGE
-            checkCallingOrSelfPermission(permissionWriteStorage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(
-                permissionReadStorage
-            ) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED
-        }
-    }
+
 
     override fun onClick(v: View) {
         when (v.id) {

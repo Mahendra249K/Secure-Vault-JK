@@ -7,7 +7,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.view.*
+import android.view.KeyEvent
+import android.view.MenuItem
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -54,7 +55,6 @@ class Prasth : FoundationActivity() {
         setToolbarData(true)
 
 
-
     }
 
 
@@ -86,41 +86,41 @@ class Prasth : FoundationActivity() {
     }
 
 
-
-    override fun onUserLeaveHint() {
-        super.onUserLeaveHint() }
-    override fun onUserInteraction() {
-        super.onUserInteraction() }
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_HOME) { }
-        return super.onKeyDown(keyCode, event) }
+        if (keyCode == KeyEvent.KEYCODE_HOME) {
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
     fun Init() {
         createImageDir()
-        var androidFragment: Fragment =
-            ToolsForVideoFAdp()
+        var androidFragment: Fragment = ToolsForVideoFAdp()
         if (Type.equals("Photos", ignoreCase = true)) {
-            androidFragment =
-                ToolsForImageFAdp()
+            androidFragment = ToolsForImageFAdp()
             mainFragment = "ToolsForImageFAdp"
         } else if (Type.equals("Videos", ignoreCase = true)) {
-            androidFragment =
-                ToolsForVideoFAdp()
+            androidFragment = ToolsForVideoFAdp()
             mainFragment = "ToolsForVideoFAdp"
         } else if (Type.equals("Files", ignoreCase = true)) {
-            androidFragment =
-                ToolsForFileFAdp()
-            mainFragment = "ToolsForFileFAdp" }
-        replaceFragment(androidFragment) }
+            androidFragment = ToolsForFileFAdp()
+            mainFragment = "ToolsForFileFAdp"
+        }
+        replaceFragment(androidFragment)
+    }
+
     private fun guideDialogForLEXA(context: Activity) {
         val alertDialog = AlertDialog.Builder(context)
         alertDialog.setTitle(R.string.give_sd_card_permission)
         alertDialog.setMessage(R.string.give_seconday_permission_message)
         alertDialog.setPositiveButton(R.string.give_seconday_permission_btn) { dialogInterface, i ->
-            triggerSDCardAccessPermission(context) }
+            triggerSDCardAccessPermission(context)
+        }
         alertDialog.setNegativeButton(
-            "Cancel") { dialogInterface: DialogInterface?, i: Int -> }
-        alertDialog.show() }
+            "Cancel"
+        ) { dialogInterface: DialogInterface?, i: Int -> }
+        alertDialog.show()
+    }
+
     private fun triggerSDCardAccessPermission(context: Activity) {
         try {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
@@ -132,6 +132,7 @@ class Prasth : FoundationActivity() {
             e.printStackTrace()
         }
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 555) {
@@ -146,12 +147,14 @@ class Prasth : FoundationActivity() {
             }
         }
     }
+
     fun replaceFragment(destFragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.trash_frame_layout, destFragment)
         fragmentTransaction.addToBackStack(destFragment.javaClass.name)
         fragmentTransaction.commitAllowingStateLoss()
     }
+
     fun createImageDir() {
         val myDirectory = File(TillsPth.hideImage)
         if (!myDirectory.exists()) {
@@ -159,21 +162,25 @@ class Prasth : FoundationActivity() {
         } else {
         }
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 true
             }
+
             else -> {
                 false
             }
         }
     }
+
     fun setToolbarData(isBack: Boolean) {
         toolbar = findViewById(R.id.main_toolbar)
         setSupportActionBar(toolbar)
     }
+
     override fun onBackPressed() {
 
         setResult(Activity.RESULT_OK)
@@ -183,15 +190,19 @@ class Prasth : FoundationActivity() {
                 finish()
                 return
             }
+
             "ToolsForVideoFAdp" -> {
                 setResult(Activity.RESULT_OK)
                 finish()
                 return
             }
+
             "ToolsForFileFAdp" -> {
                 setResult(Activity.RESULT_OK)
                 finish()
-                return }
+                return
+            }
+
             else -> {
                 val intent = Intent(this@Prasth, BordMain::class.java)
                 startActivity(intent)
@@ -199,24 +210,36 @@ class Prasth : FoundationActivity() {
         }
 
     }
+
     fun requestPermissions() {
         HandPrmt.getInstance().requestPermissions(this, object : OnListener {
             override fun onPermissionGranted() {
-                Init() }
+                Init()
+            }
+
             override fun onPermissionDenied() {}
             override fun onOpenSettings() {
                 val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                 val uri = Uri.fromParts("package", packageName, null)
                 intent.data = uri
-                onResultLauncher!!.launch(intent) }
-        }) }
+                onResultLauncher!!.launch(intent)
+            }
+        })
+    }
+
     private fun endPermission() {
         HandPrmt.getInstance().hideDialog()
         if (onResultLauncher != null) {
-            onResultLauncher!!.unregister() } }
+            onResultLauncher!!.unregister()
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
-        endPermission() }
+        endPermission()
+    }
+
     companion object {
-        private val TAG = Prasth::class.java.simpleName }
+        private val TAG = Prasth::class.java.simpleName
+    }
 }

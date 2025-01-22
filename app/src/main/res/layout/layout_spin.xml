@@ -19,7 +19,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:layout_margin="10dp"
-            android:contentDescription="@string/app_name" />
+            android:contentDescription="@string/app_setting_name" />
 
         <com.hidefile.secure.folder.vault.cluecanva.VTv
             android:id="@+id/tvSpin"

@@ -300,7 +300,9 @@ class Pswd : HiddenFootActivity(), View.OnClickListener, FingerprintSecureCallba
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
-        System.exit(0)
+        if (!ChangePin){
+            System.exit(0)
+        }
     }
 
     private fun backButtonClick() {

@@ -23,8 +23,8 @@ android {
     }
     buildTypes {
         debug {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
         }
         release {
             minifyEnabled true
@@ -75,8 +75,12 @@ android {
     buildFeatures {
         dataBinding true
     }
+
 }
 dependencies {
+
+
+
     //add
     implementation 'androidx.core:core-ktx:1.9.0'
 
@@ -146,6 +150,12 @@ dependencies {
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
     implementation("com.google.android.ump:user-messaging-platform:2.1.0")
 
+    //calldorado
+    implementation 'com.android.databinding:compiler:3.1.4'
+    implementation('com.calldorado:calldorado-release:8.1.8.3839@aar'){
+        transitive = true
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
 
 }
 

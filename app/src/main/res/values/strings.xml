@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name" translatable="false">Smart Vault - Hide Photo Video</string>
-<!--    <string name="app_name" translatable="false">Secure folder : Gallery Lock</string>-->
+    <string name="app_name" translatable="false">#Smart Vault</string>
+    <string name="app_setting_name">Smart Vault - Hide Photo Video</string>
+    <string name="app_name_short">Smart Vault</string>
+
 
     <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>
 <!--    <string name="firebase_name" translatable="false">Smart Vault Hide Photo Video</string>-->
@@ -11,7 +13,6 @@
     <string name="AppMetrica_id" translatable="false">9c6a27a3-08f1-419c-adbc-6c8eb9c46dcb</string>
     <string name="Onesignal_id" translatable="false">600c6786-1ec0-45a8-ad21-7c691a3c9e0d</string>
     <string name="text_photo">Picture</string>
-    <string name="app_name_short">Smart Vault</string>
     <string name="app_icon_name_change">Change App Icon &amp; Name</string>
 
 
@@ -185,5 +186,26 @@
 
 
     <string name="Ad">Ad</string>
+
+
+    ///
+    <string name="please_grant_the_following_permissions_in_order_to_enjoy_the_full_app_experience">Please grant the permissions in order to enjoy the full app experience</string>
+
+    <string name="grant_notification_permission">Grant notification permission!!</string>
+    <string name="phone_call">Phone Call</string>
+    <string name="camera">Camera</string>
+    <string name="media_storage">Media Storage</string>
+    <string name="media_storage_des">Please allow to read media photos, videos and audio permission</string>
+    <string name="camera_des">To be able capture photos and videos</string>
+    <string name="notification">Notification</string>
+    <string name="to_be_able_receieve_notifications">To be able receive notifications</string>
+    <string name="draw_over_the_apps">Draw over apps</string>
+    <string name="to_show_on_top_of_other_apps_our_pro_ngallery_widgets">Allows the app to show on top of apps to make sure you never miss a call</string>
+    <string name="agree_privacy">By continuing, you accept and approve the privacy policy.</string>
+
+    <string name="privacy_policy_uri" translatable="false">https://securefolderapp.blogspot.com/2023/01/secure-folder-hide-image-vid.html</string>
+    <string name="caller_id_settings">Caller ID Settings</string>
+    <string name="revoke_consent">Revoke Consent</string>
+
 
 </resources>

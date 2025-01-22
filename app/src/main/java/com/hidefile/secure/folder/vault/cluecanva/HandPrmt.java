@@ -41,6 +41,7 @@ public class HandPrmt {
         Collection<String> permissionList = new ArrayList<>();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            permissionList.add(Manifest.permission.POST_NOTIFICATIONS);
             permissionList.add(Manifest.permission.READ_MEDIA_AUDIO);
             permissionList.add(Manifest.permission.READ_MEDIA_VIDEO);
             permissionList.add(Manifest.permission.READ_MEDIA_IMAGES);
@@ -54,6 +55,8 @@ public class HandPrmt {
             }
 
         }
+
+        permissionList.add(Manifest.permission.READ_PHONE_STATE);
         permissionList.add(Manifest.permission.CAMERA);
         hideDialog();
         Dexter.withContext(context)

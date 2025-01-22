@@ -3,36 +3,48 @@ package com.hidefile.secure.folder.vault.dashex
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
-import android.widget.*
-import androidx.appcompat.app.AppCompatDelegate
+import android.widget.AdapterView
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Spinner
 import androidx.appcompat.widget.Toolbar
 import androidx.multidex.BuildConfig
+import com.calldorado.Calldorado
+import com.google.android.ump.ConsentInformation
+import com.google.android.ump.FormError
+import com.google.android.ump.UserMessagingPlatform
 import com.hidefile.secure.folder.vault.R
-import com.hidefile.secure.folder.vault.cluecanva.*
+import com.hidefile.secure.folder.vault.cluecanva.EntryAux
+import com.hidefile.secure.folder.vault.cluecanva.PlcMngr
+import com.hidefile.secure.folder.vault.cluecanva.SupPref
+import com.hidefile.secure.folder.vault.cluecanva.TransINam
+import com.hidefile.secure.folder.vault.cluecanva.VTv
 import com.hidefile.secure.folder.vault.databinding.ConfigurationBinding
 import com.hidefile.secure.folder.vault.dpss.SpinAdp
 import com.hidefile.secure.folder.vault.edptrs.ComeBack
 
 class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnCheckedChangeListener {
-   public lateinit var binding: ConfigurationBinding
+    lateinit var binding: ConfigurationBinding
     var disablePackageNames: MutableList<String>? = null
     var spinner: Spinner? = null
     var mContext: Context? = null
-    var appNameList = arrayOf("Smart Vault","Clock",  "Message", "Reminder", "Weather")
+    var appNameList = arrayOf("Smart Vault", "Clock", "Message", "Reminder", "Weather")
     var appImageList = arrayOf(
         R.drawable.ic_logo,
         R.drawable.appicon_4,
         R.drawable.appicon_3,
         R.drawable.appicon_2,
-        R.drawable.appicon_5)
+        R.drawable.appicon_5
+    )
     var llPinChange: LinearLayout? = null
     var Launguagechange: LinearLayout? = null
+    var llCallerIDSetting: LinearLayout? = null
+    var llRevokeConsent: LinearLayout? = null
     var llVibrator: LinearLayout? = null
     var llHiddenSelfieSound: LinearLayout? = null
     var swHiddenSelfieSound: ComeBack? = null
@@ -78,21 +90,12 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
     }
 
 
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-//        val intent = Intent(this@Configuration, BordMain::class.java)
-////        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(intent)
-
-
-    }
-
     private fun Init() {
         spinner = findViewById(R.id.spinner)
         llPinChange = findViewById(R.id.pinchange)
         Launguagechange = findViewById(R.id.Launguagechange)
+        llCallerIDSetting = findViewById(R.id.llCallerIDSetting)
+        llRevokeConsent = findViewById(R.id.llRevokeConsent)
         llVibrator = findViewById(R.id.llVibrator)
         llHiddenSelfieSound = findViewById(R.id.llHiddenSelfieSound)
         sw_vibrate = findViewById(R.id.sw_vibreat)
@@ -102,35 +105,39 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
         val b = SupPref.getBooleanValue(mContext, SupPref.Hidden_selfie, true)
         swHiddenSelfieSound?.setChecked(b)
         val adapter = SpinAdp(this, R.layout.layout_spin, appNameList, appImageList)
-        spinner?.setAdapter(adapter)
+        spinner?.adapter = adapter
         val index = SupPref.getIntValue(mContext, SupPref.ICON_INDEX, 0)
         spinner?.setSelection(index)
-        spinner?.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
-                val newPackage = disablePackageNames!![position]
-                if (!newPackage.equals("", ignoreCase = true) && !newPackage.equals(
-                        oldPackageName,
-                        ignoreCase = true
-                    )
+
+        try {
+            spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?, view: View, position: Int, id: Long
                 ) {
-                    val disableNames: MutableList<String> = ArrayList(disablePackageNames)
-                    disableNames.remove(newPackage)
-                    Log.e("TAG", "onItemSelected->1: "+newPackage )
-                    Log.e("TAG", "onItemSelected->2: "+disableNames )
-                    Log.e("TAG", "onItemSelected->3: "+position )
-                    setAppIcon(newPackage, disableNames, position)
-                    oldPackageName = newPackage
+                    val newPackage = disablePackageNames!![position]
+                    if (!newPackage.equals("", ignoreCase = true) && !newPackage.equals(
+                            oldPackageName, ignoreCase = true
+                        )
+                    ) {
+                        val disableNames: MutableList<String> = ArrayList(disablePackageNames)
+                        disableNames.remove(newPackage)
+                        Log.e("TAG", "onItemSelected->1: " + newPackage)
+                        Log.e("TAG", "onItemSelected->2: " + disableNames)
+                        Log.e("TAG", "onItemSelected->3: " + position)
+                        setAppIcon(newPackage, disableNames, position)
+                        oldPackageName = newPackage
+                    }
                 }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        })
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
         llPinChange?.setOnClickListener(this)
         Launguagechange?.setOnClickListener(this)
+        llCallerIDSetting?.setOnClickListener(this)
+        llRevokeConsent?.setOnClickListener(this)
         llHiddenSelfieSound?.setOnClickListener(this)
         llVibrator?.setOnClickListener(this)
         sw_vibrate?.setOnCheckedChangeListener(object : ComeBack.OnCheckedChangeListener {
@@ -149,30 +156,36 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
             override fun onCheckedChanged(view: ComeBack?, isChecked: Boolean) {
                 if (isChecked) {
                     SupPref.setBooleanValue(
-                        mContext,
-                        SupPref.Hidden_selfie,
-                        true
+                        mContext, SupPref.Hidden_selfie, true
                     )
                     swHiddenSelfieSound!!.setChecked(true)
                 } else {
                     SupPref.setBooleanValue(
-                        mContext,
-                        SupPref.Hidden_selfie,
-                        false
+                        mContext, SupPref.Hidden_selfie, false
                     )
                     swHiddenSelfieSound!!.setChecked(false)
                 }
             }
         })
+
+        try {
+            val consentInformationss =
+                UserMessagingPlatform.getConsentInformation(this@Configuration)
+            if (consentInformationss.privacyOptionsRequirementStatus == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED) {
+                llRevokeConsent?.visibility = View.VISIBLE
+
+            } else {
+                llRevokeConsent?.visibility = View.GONE
+
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun setAppIcon(activeName: String?, disableNames: List<String>?, iconIndex: Int) {
-        TransINam.Builder(this@Configuration)
-            .activeName(activeName)
-            .disableNames(disableNames)
-            .packageName(BuildConfig.APPLICATION_ID)
-            .build()
-            .setNow()
+        TransINam.Builder(this@Configuration).activeName(activeName).disableNames(disableNames)
+            .packageName(BuildConfig.APPLICATION_ID).build().setNow()
         EntryAux.showToast(mContext, "App icon changed successfully" + appNameList[iconIndex])
         SupPref.setIntValue(mContext, SupPref.ICON_INDEX, iconIndex)
     }
@@ -192,15 +205,27 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
 
                 val intent = Intent(mContext, MangamtiBhasaPasandKarvaniActivity::class.java)
                 intent.putExtra("ShuConfirgurationMathiChe", true)
-               startActivity(intent)
+                startActivity(intent)
             }
 
 
+            R.id.llCallerIDSetting -> {
+                Calldorado.createSettingsActivity(this@Configuration)
+            }
+
+            R.id.llRevokeConsent -> {
+                try {
+                    UserMessagingPlatform.showPrivacyOptionsForm(
+                        this@Configuration
+                    ) { formError: FormError? -> }
+                } catch (e: java.lang.Exception) {
+                    e.printStackTrace()
+                }
+            }
+
 
             R.id.llVibrator -> if (SupPref.getBooleanValue(
-                    mContext,
-                    SupPref.VIBRATOR,
-                    true
+                    mContext, SupPref.VIBRATOR, true
                 )
             ) {
                 SupPref.setBooleanValue(mContext, SupPref.VIBRATOR, false)
@@ -209,10 +234,9 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
                 SupPref.setBooleanValue(mContext, SupPref.VIBRATOR, true)
                 sw_vibrate!!.isChecked = true
             }
+
             R.id.llHiddenSelfieSound -> if (SupPref.getBooleanValue(
-                    mContext,
-                    SupPref.Hidden_selfie,
-                    true
+                    mContext, SupPref.Hidden_selfie, true
                 )
             ) {
                 SupPref.setBooleanValue(mContext, SupPref.Hidden_selfie, false)
@@ -221,6 +245,7 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
                 SupPref.setBooleanValue(mContext, SupPref.Hidden_selfie, true)
                 swHiddenSelfieSound!!.isChecked = true
             }
+
             else -> {}
         }
     }
@@ -231,6 +256,7 @@ class Configuration : FoundationActivity(), View.OnClickListener, ComeBack.OnChe
                 onBackPressed()
                 true
             }
+
             else -> {
                 false
             }

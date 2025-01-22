@@ -24,3 +24,8 @@
 #-keep class * implements java.io.Serializable {*;}
 
 -keep class com.hidefile.secure.folder.vault.cluecanva.* { *; }
+
+#-dontwarn org.apache.http.**
+#-dontwarn android.net.**
+#-keep class org.apache.** {*;}
+#-keep class org.apache.http.** { *; }

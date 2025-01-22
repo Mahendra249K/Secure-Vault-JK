@@ -6,8 +6,8 @@ import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.calldorado.Calldorado
 import com.facebook.ads.AudienceNetworkAds
-import com.hidefile.secure.folder.vault.R
 import com.hidefile.secure.folder.vault.cluecanva.HandleLyf
 import com.hidefile.secure.folder.vault.cluecanva.RDbhp
 import com.hidefile.secure.folder.vault.cluecanva.SupPref
@@ -22,6 +22,9 @@ class MyApplication : Application() {
         application = this
         AudienceNetworkAds.initialize(this)
 
+        Thread {
+            Calldorado.start(this@MyApplication)
+        }.start()
 
 //        val testDeviceIds = Arrays.asList("DD2E35E506D1C99B6F4D4146B7B7F0E4")
 //        val configuration = RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build()

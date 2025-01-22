@@ -4,8 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +22,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -30,6 +35,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.hidefile.secure.folder.vault.AdActivity.Open_App_Manager;
 import com.hidefile.secure.folder.vault.R;
 import com.hidefile.secure.folder.vault.cluecanva.ConfigureSetWise;
 import com.hidefile.secure.folder.vault.cluecanva.RDbhp;
@@ -178,9 +184,21 @@ public class ToolsForFileTrashFAdp extends Fragment implements OnImageItemClickL
                 imageListAdapter.setSelectionMode(isSelectedMode);
             }
         } else {
-            TooRfl.shareImage(context, fileList.get(position).getNewPath(), fileList.get(position).getDisplayName());
+            Open_App_Manager.doNotDisplayAds = true;
+            Intent intent = TooRfl.shareImageReturnIntent(context, fileList.get(position).getNewPath(), fileList.get(position).getDisplayName());
+            someActivityResultLauncher.launch(intent);
         }
     }
+
+
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Open_App_Manager.doNotDisplayAds = false;
+            }
+        }, 3000);
+    });
 
     @Override
     public void onImageItemLongClick(int position) {

@@ -78,6 +78,22 @@ object TooRfl {
     }
 
     @JvmStatic
+    fun shareImageReturnIntent(mContext: Context, newPath: String, displayName: String) : Intent{
+        val intent = Intent(Intent.ACTION_SEND)
+        val file = copyTemporaryToFolder(mContext, newPath, displayName) ?: return intent
+        val photoURI =
+            FileProvider.getUriForFile(mContext, mContext.packageName + ".provider", file)
+        intent.type = TillsFl.getMimeType(
+            mContext,
+            Uri.fromFile(file)
+        )
+        intent.putExtra(Intent.EXTRA_SUBJECT, mContext.resources.getString(R.string.app_setting_name))
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        intent.putExtra(Intent.EXTRA_STREAM, photoURI)
+        return intent
+    }
+
+    @JvmStatic
     fun shareMultipleImages(mContext: Context, filesList: ArrayList<ListIdPic>, mimeType: String?) {
         val intent = Intent(Intent.ACTION_SEND_MULTIPLE)
         intent.putExtra(Intent.EXTRA_SUBJECT, mContext.resources.getString(R.string.app_setting_name))

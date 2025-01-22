@@ -1,11 +1,9 @@
 package com.hidefile.secure.folder.vault.dashex;
 
 import static android.os.Build.VERSION.SDK_INT;
-import static com.hidefile.secure.folder.vault.cluecanva.SupPref.isDarkModeOn;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -29,7 +27,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -40,10 +37,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.hidefile.secure.folder.vault.AdActivity.Call_Back_Ads;
 import com.hidefile.secure.folder.vault.AdActivity.Common_Adm;
 import com.hidefile.secure.folder.vault.AdActivity.GDPR;
-import com.hidefile.secure.folder.vault.AdActivity.Open_App_Manager;
 import com.hidefile.secure.folder.vault.AdActivity.Preference_Ads;
 import com.hidefile.secure.folder.vault.AdActivity.SharedPref;
 import com.hidefile.secure.folder.vault.R;
@@ -63,7 +58,7 @@ public class Str11 extends AppCompatActivity {
     CheckBox checkboxview;
     AdRequest build2;
     TextView askprivacyAccepteText;
-    Button getstartingEnableButton ,getstartingdisableButton ;
+    Button getstartingEnableButton, getstartingdisableButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -79,12 +74,12 @@ public class Str11 extends AppCompatActivity {
         build2 = new AdRequest.Builder().build();
         hideNavigationBar();
 
-        privacyacceptedlayout=findViewById(R.id.privacyacceptedlayout);
-        showActionContainads=findViewById(R.id.showActionContainads);
-        checkboxview=findViewById(R.id.checkboxview);
-        askprivacyAccepteText=findViewById(R.id.askprivacyAccepteText);
-        getstartingEnableButton=findViewById(R.id.getstartingEnableButton);
-        getstartingdisableButton=findViewById(R.id.getstartingdisableButton);
+        privacyacceptedlayout = findViewById(R.id.privacyacceptedlayout);
+        showActionContainads = findViewById(R.id.showActionContainads);
+        checkboxview = findViewById(R.id.checkboxview);
+        askprivacyAccepteText = findViewById(R.id.askprivacyAccepteText);
+        getstartingEnableButton = findViewById(R.id.getstartingEnableButton);
+        getstartingdisableButton = findViewById(R.id.getstartingdisableButton);
 
         if (!PrefHandler.getBooleanPref(this, PrefHandler.PRIVACY_ACCEPTED)) {
             AskToUserPrivacyPermissionAccept();
@@ -93,7 +88,6 @@ public class Str11 extends AppCompatActivity {
             checkinternet();
         }
     }
-
 
 
     private void checkinternet() {
@@ -105,6 +99,7 @@ public class Str11 extends AppCompatActivity {
                 callFirebaseTest();
 //                connectFirebase();
             }
+
             @Override
             public void onFail() {
                 Toast.makeText(Str11.this, getResources().getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show();
@@ -113,8 +108,7 @@ public class Str11 extends AppCompatActivity {
     }
 
     private void callFirebaseTest() {
-        FirebaseFirestore.getInstance().collection(getResources().getString(R.string.firebase_name)).document("Ads").get().
-                addOnSuccessListener(documentSnapshot -> {
+        FirebaseFirestore.getInstance().collection(getResources().getString(R.string.firebase_name)).document("Ads").get().addOnSuccessListener(documentSnapshot -> {
             Log.e("vv", "onDataChange: " + documentSnapshot);
             Preference_Ads adsDataPrefs = new Preference_Ads(this);
             adsDataPrefs.setAdmBannerID("ca-app-pub-3940256099942544/9214589741");
@@ -143,17 +137,18 @@ public class Str11 extends AppCompatActivity {
         });
 
 
-            if (adsDataPrefs.getAppOpenSplashEnable()) {//if true
+        if (adsDataPrefs.getAppOpenSplashEnable()) {//if true
 
             AppOpenAd.load(Str11.this, adsDataPrefs.getAdmAppOpenID(), build2, 1, new AppOpenAd.AppOpenAdLoadCallback() {
                 public void onAdLoaded(AppOpenAd appOpenAd) {//load app open
-                    super.onAdLoaded((AppOpenAd) appOpenAd);
+                    super.onAdLoaded(appOpenAd);
                     appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                         @Override
                         public void onAdFailedToShowFullScreenContent(AdError adError) {
                             super.onAdFailedToShowFullScreenContent(adError);
                             init();
                         }
+
                         @Override
                         public void onAdDismissedFullScreenContent() {//dismiss app open
                             super.onAdDismissedFullScreenContent();
@@ -162,6 +157,7 @@ public class Str11 extends AppCompatActivity {
                     });
                     appOpenAd.show(Str11.this);
                 }
+
                 @Override
                 public void onAdFailedToLoad(LoadAdError loadAdError) {//error in load app open ad
                     super.onAdFailedToLoad(loadAdError);
@@ -174,52 +170,50 @@ public class Str11 extends AppCompatActivity {
     }
 
     private void connectFirebase() {
-        FirebaseFirestore.getInstance().collection(getResources().getString(R.string.firebase_name))
-                .document("Ads").get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        Log.e("vv", "onDataChange: " + documentSnapshot);
-                        adsDataPrefs.setAdmBannerID(documentSnapshot.get("AM_BANNER_ID").toString());
-                        adsDataPrefs.setAdmInterstitialID(documentSnapshot.get("AM_INTERSTITIAL_ID").toString());
-                        adsDataPrefs.setAdmNativeID(documentSnapshot.get("AM_NATIVE_ID").toString());
-                        adsDataPrefs.setAppOpenSplashEnable(documentSnapshot.getBoolean("APP_OPEN_ENABLE").booleanValue());
-                        adsDataPrefs.setAdmAppOpenID(documentSnapshot.get("APP_OPEN_ID").toString());
-                        adsDataPrefs.setbanner_enable(documentSnapshot.getBoolean("BANNER_ENABLE").booleanValue());
-                        adsDataPrefs.setFbBannerID(documentSnapshot.get("FB_BANNER_ID").toString());
-                        adsDataPrefs.setFbInterstitialID(documentSnapshot.get("FB_INTERSTITIAL_ID").toString());
-                        adsDataPrefs.setFbNativeID(documentSnapshot.get("FB_NATIVE_ID").toString());
-                        adsDataPrefs.setInterstitialBackPressClickGap(documentSnapshot.getString("INTERSTITIAL_BACKPRESS_CLICK_MODULE"));
-                        adsDataPrefs.setInterstitialClickGap(documentSnapshot.getString("INTERSTITIAL_CLICK_MODULE"));
-                        adsDataPrefs.setinterstitial_enable(documentSnapshot.getBoolean("INTERSTITIAL_ENABLE").booleanValue());
-                        adsDataPrefs.setInterstitialEnableBackPress(documentSnapshot.getBoolean("INTERSTITIAL_ENABLE_BACKPRESS").booleanValue());
-                        adsDataPrefs.setnative_ads_enable(documentSnapshot.getBoolean("NATIVE_ENABLE").booleanValue());
-                        adsDataPrefs.set_priority(documentSnapshot.get("PRIORITY").toString());
-                        adsDataPrefs.setFbNativeBannerID(documentSnapshot.get("FB_NATIVE_BANNER_ID").toString());
-                        adsDataPrefs.setAdmNativeVideoID(documentSnapshot.get("AM_NATIVE_VIDEO_ID").toString());
+        FirebaseFirestore.getInstance().collection(getResources().getString(R.string.firebase_name)).document("Ads").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.e("vv", "onDataChange: " + documentSnapshot);
+                adsDataPrefs.setAdmBannerID(documentSnapshot.get("AM_BANNER_ID").toString());
+                adsDataPrefs.setAdmInterstitialID(documentSnapshot.get("AM_INTERSTITIAL_ID").toString());
+                adsDataPrefs.setAdmNativeID(documentSnapshot.get("AM_NATIVE_ID").toString());
+                adsDataPrefs.setAppOpenSplashEnable(documentSnapshot.getBoolean("APP_OPEN_ENABLE").booleanValue());
+                adsDataPrefs.setAdmAppOpenID(documentSnapshot.get("APP_OPEN_ID").toString());
+                adsDataPrefs.setbanner_enable(documentSnapshot.getBoolean("BANNER_ENABLE").booleanValue());
+                adsDataPrefs.setFbBannerID(documentSnapshot.get("FB_BANNER_ID").toString());
+                adsDataPrefs.setFbInterstitialID(documentSnapshot.get("FB_INTERSTITIAL_ID").toString());
+                adsDataPrefs.setFbNativeID(documentSnapshot.get("FB_NATIVE_ID").toString());
+                adsDataPrefs.setInterstitialBackPressClickGap(documentSnapshot.getString("INTERSTITIAL_BACKPRESS_CLICK_MODULE"));
+                adsDataPrefs.setInterstitialClickGap(documentSnapshot.getString("INTERSTITIAL_CLICK_MODULE"));
+                adsDataPrefs.setinterstitial_enable(documentSnapshot.getBoolean("INTERSTITIAL_ENABLE").booleanValue());
+                adsDataPrefs.setInterstitialEnableBackPress(documentSnapshot.getBoolean("INTERSTITIAL_ENABLE_BACKPRESS").booleanValue());
+                adsDataPrefs.setnative_ads_enable(documentSnapshot.getBoolean("NATIVE_ENABLE").booleanValue());
+                adsDataPrefs.set_priority(documentSnapshot.get("PRIORITY").toString());
+                adsDataPrefs.setFbNativeBannerID(documentSnapshot.get("FB_NATIVE_BANNER_ID").toString());
+                adsDataPrefs.setAdmNativeVideoID(documentSnapshot.get("AM_NATIVE_VIDEO_ID").toString());
 
-                    }
-                });
+            }
+        });
 
-        FirebaseFirestore.getInstance().collection(getResources().getString(R.string.firebase_name))
-                .document("Ads").get().addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        init();
-                    }
-                });
+        FirebaseFirestore.getInstance().collection(getResources().getString(R.string.firebase_name)).document("Ads").get().addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                init();
+            }
+        });
 
-            if (adsDataPrefs.getAppOpenSplashEnable()) {//if true
+        if (adsDataPrefs.getAppOpenSplashEnable()) {//if true
             AdRequest build2 = new AdRequest.Builder().build();
             AppOpenAd.load(Str11.this, adsDataPrefs.getAdmAppOpenID(), build2, 1, new AppOpenAd.AppOpenAdLoadCallback() {
                 public void onAdLoaded(AppOpenAd appOpenAd) {//load app open
-                    super.onAdLoaded((AppOpenAd) appOpenAd);
+                    super.onAdLoaded(appOpenAd);
                     appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                         @Override
                         public void onAdFailedToShowFullScreenContent(AdError adError) {
                             super.onAdFailedToShowFullScreenContent(adError);
                             init();
                         }
+
                         @Override
                         public void onAdDismissedFullScreenContent() {//dismiss app open
                             super.onAdDismissedFullScreenContent();
@@ -228,6 +222,7 @@ public class Str11 extends AppCompatActivity {
                     });
                     appOpenAd.show(Str11.this);
                 }
+
                 @Override
                 public void onAdFailedToLoad(LoadAdError loadAdError) {//error in load app open ad
                     super.onAdFailedToLoad(loadAdError);
@@ -242,13 +237,12 @@ public class Str11 extends AppCompatActivity {
 
     public void hideNavigationBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            int flags = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            int flags = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
             getWindow().getDecorView().setSystemUiVisibility(flags);
         }
     }
 
-    private void AskToUserPrivacyPermissionAccept(){
+    private void AskToUserPrivacyPermissionAccept() {
         privacyacceptedlayout.setVisibility(View.VISIBLE);
         showActionContainads.setVisibility(View.GONE);
         checkboxview.setVisibility(View.VISIBLE);
@@ -272,10 +266,10 @@ public class Str11 extends AppCompatActivity {
             }
         });
         getstartingEnableButton.setOnClickListener(v -> {
-            PrefHandler.setBooleanPref(this,PrefHandler.PRIVACY_ACCEPTED,true);
+            PrefHandler.setBooleanPref(this, PrefHandler.PRIVACY_ACCEPTED, true);
             privacyacceptedlayout.setVisibility(View.GONE);
             showActionContainads.setVisibility(View.VISIBLE);
-                          checkinternet();
+            checkinternet();
         });
     }
 
@@ -315,6 +309,7 @@ public class Str11 extends AppCompatActivity {
             permitAccess();
         }
     }
+
     private boolean isPermitted() {
         boolean isPermissionGranted = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -324,13 +319,7 @@ public class Str11 extends AppCompatActivity {
             String post_notifications = android.Manifest.permission.POST_NOTIFICATIONS;
             String permissionCamera = Manifest.permission.CAMERA;
             String read_phone_state = Manifest.permission.READ_PHONE_STATE;
-            if (  checkCallingOrSelfPermission(permissionAudio) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionVideo) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionImage) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(post_notifications) == PackageManager.PERMISSION_GRANTED &&
-                    checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED
-            ) {
+            if (checkCallingOrSelfPermission(permissionAudio) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionVideo) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionImage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(post_notifications) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
                 isPermissionGranted = true;
             }
         } else {
@@ -341,42 +330,39 @@ public class Str11 extends AppCompatActivity {
                 String permissionStorage = android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
                 String permissionStorageRead = android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
-                if (checkCallingOrSelfPermission(permissionStorage) == PackageManager.PERMISSION_GRANTED &&
-                        checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED &&
-                        checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED &&
-                        checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
+                if (checkCallingOrSelfPermission(permissionStorage) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
                     isPermissionGranted = true;
                 }
 
             } else {
                 String permissionStorageRead = android.Manifest.permission.READ_EXTERNAL_STORAGE;
-                if (checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED &&
-                        checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED &&
-                        checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
+                if (checkCallingOrSelfPermission(permissionStorageRead) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(permissionCamera) == PackageManager.PERMISSION_GRANTED && checkCallingOrSelfPermission(read_phone_state) == PackageManager.PERMISSION_GRANTED) {
                     isPermissionGranted = true;
                 }
             }
         }
         return isPermissionGranted;
     }
+
     private void permitAccess() {
-        if(!isLanguageSet()){
-            SupPref.putString(Str11.this,"launguageBack",true);
+        if (!isLanguageSet()) {
+            SupPref.putString(Str11.this, "launguageBack", true);
             Intent i = new Intent(Str11.this, MangamtiBhasaPasandKarvaniActivity.class);
             startActivity(i);
             finish();
-        }
-        else {
+        } else {
             Intent i = new Intent(Str11.this, PermitAccess.class);
             startActivity(i);
             finish();
         }
     }
+
     private void nextMove() {
         Intent i = new Intent(Str11.this, Pswd.class);
         startActivity(i);
         finish();
     }
+
     private boolean isLanguageSet() {
         SharedPref sharedPref = new SharedPref(this);
         String BhashaKod = sharedPref.getLanguageCode();

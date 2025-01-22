@@ -115,65 +115,35 @@ class TrashBin : FoundationActivity() {
         }
     }
 
-//    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-//    override fun onResume() {
-//        super.onResume()
-//        SharedPref.AppOpenShow = false
-//        Log.d("Message", "Resume")
-//
-//
-//    }
-
-//    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-//    override fun onStart() {
-//        super.onStart()
-//        Log.d("Message", "onstart")
-//
-//        SharedPref.AppOpenShow = false
-//    }
-
-//    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-//    override fun onPause() {
-//        super.onPause()
-//        Log.d("Message", "onpause")
-//
-//        SharedPref.AppOpenShow = false
-//    }
-
-//    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-//    override fun onStop() {
-//        super.onStop()
-//        Log.d("Message", "stop")
-//        SharedPref.AppOpenShow = false
-//
-//    }
-
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    override fun onResume() {
+        super.onResume()
+        SharedPref.AppOpenShow = false
+        Log.d("Message", "Resume")
+    }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     override fun onStart() {
         super.onStart()
-        Constant.isShowOpenAd = true
-        SharedPref.AppOpenShow = true
+        Log.d("Message", "onstart")
 
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    override fun onResume() {
-        super.onResume()
-        SharedPref.AppOpenShow = true
+        SharedPref.AppOpenShow = false
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     override fun onPause() {
         super.onPause()
-        SharedPref.AppOpenShow = true
+        Log.d("Message", "onpause")
+
+        SharedPref.AppOpenShow = false
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     override fun onStop() {
         super.onStop()
-        SharedPref.AppOpenShow = true
-        Log.d("cycle", "stop")
+        Log.d("Message", "stop")
+        SharedPref.AppOpenShow = false
+
     }
 
 }

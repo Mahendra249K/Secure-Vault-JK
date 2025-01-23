@@ -1,11 +1,10 @@
 package com.hidefile.secure.folder.vault.dashex
 
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Build.VERSION
@@ -24,12 +23,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 import com.calldorado.Calldorado
+import com.calldorado.Calldorado.ColorElement
 import com.hidefile.secure.folder.vault.AdActivity.SharedPref
 import com.hidefile.secure.folder.vault.R
 import com.hidefile.secure.folder.vault.calldorado.OverlayPermissionManager
@@ -37,6 +36,7 @@ import com.hidefile.secure.folder.vault.cluecanva.HandPrmt
 import com.hidefile.secure.folder.vault.cluecanva.HandPrmt.OnListener
 import com.hidefile.secure.folder.vault.cluecanva.SupPref
 import java.io.File
+
 
 class PermitAccess : FoundationActivity(), View.OnClickListener {
     private val REQUEST_HIDE_PHOTOS = 1996
@@ -74,6 +74,10 @@ class PermitAccess : FoundationActivity(), View.OnClickListener {
                 onBoardingSuccess()
             }
         }
+
+        val colorMap = HashMap<ColorElement?, Int?>()
+        colorMap[ColorElement.NavigationColor] = getColor(R.color.colorAccent)
+        Calldorado.setCustomColors(this@PermitAccess, colorMap)
     }
 
     private fun onBoardingSuccess() {

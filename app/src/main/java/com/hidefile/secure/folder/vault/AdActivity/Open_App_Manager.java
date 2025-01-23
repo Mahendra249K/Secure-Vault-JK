@@ -6,12 +6,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
 
+import com.calldorado.ui.aftercall.CallerIdActivity;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -88,31 +90,35 @@ public class Open_App_Manager implements LifecycleObserver, Application.Activity
 
     public void showAdIfAvailable() {
 
-        Log.d(TAG, "showAdIfAvailable: ");
-        if (isShowingAd || !isAdAvailable()) {
-            Log.d(TAG, "Can not show ad.");
-            fetchAd();
+        if (currentActivity instanceof CallerIdActivity) {
             return;
-        }
-        Log.d(TAG, "Will show ad.");
-        this.appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-            public void onAdFailedToShowFullScreenContent(AdError adError) {
+        }else {
+            Log.d(TAG, "showAdIfAvailable: ");
+            if (isShowingAd || !isAdAvailable()) {
+                Log.d(TAG, "Can not show ad.");
+                fetchAd();
+                return;
             }
-            public void onAdDismissedFullScreenContent() {
-                AppOpenAd unused = Open_App_Manager.this.appOpenAd = null;
-                boolean unused2 = Open_App_Manager.isShowingAd = false;
-                Open_App_Manager.this.fetchAd();
-            }
+            Log.d(TAG, "Will show ad.");
+            this.appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                }
 
-            public void onAdShowedFullScreenContent() {
-                boolean unused = Open_App_Manager.isShowingAd = true;
-            }
-        });
-        Activity activity = this.currentActivity;
-        if (!(activity instanceof Str11)) {
-            this.appOpenAd.show(activity);
-        }
+                public void onAdDismissedFullScreenContent() {
+                    AppOpenAd unused = Open_App_Manager.this.appOpenAd = null;
+                    boolean unused2 = Open_App_Manager.isShowingAd = false;
+                    Open_App_Manager.this.fetchAd();
+                }
 
+                public void onAdShowedFullScreenContent() {
+                    boolean unused = Open_App_Manager.isShowingAd = true;
+                }
+            });
+            Activity activity = this.currentActivity;
+            if (!(activity instanceof Str11)) {
+                this.appOpenAd.show(activity);
+            }
+        }
     }
 
     public void onActivityStarted(Activity activity) {

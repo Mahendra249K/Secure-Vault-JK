@@ -83,7 +83,7 @@
             android:value="a1-63af7622-61ba-4622-a004-800281313a58" />
         <meta-data
             android:name="com.calldorado.AppId"
-            android:value="b0-77d83c67-7f31-4803-b88f-6ff74966be0e" />
+            android:value="b0-811f92f1-f13a-418e-bf42-af48e3e5c389" />
 
         <receiver
             android:name=".calldorado.SetupFragmentReceiver"
@@ -323,9 +323,9 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5879061777923363~3072995988"
             tools:replace="android:value" />
-        <meta-data
-            android:name="applovin.sdk.key"
-            android:value="3N4Mt8SNhOzkQnGb9oHsRRG1ItybcZDpJWN1fVAHLdRagxP-_k_ZXVaMAdMe5Otsmp6qJSXskfsrtakfRmPAGW" />
+<!--        <meta-data-->
+<!--            android:name="applovin.sdk.key"-->
+<!--            android:value="3N4Mt8SNhOzkQnGb9oHsRRG1ItybcZDpJWN1fVAHLdRagxP-_k_ZXVaMAdMe5Otsmp6qJSXskfsrtakfRmPAGW" />-->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

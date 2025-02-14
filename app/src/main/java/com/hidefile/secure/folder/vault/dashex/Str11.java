@@ -138,32 +138,32 @@ public class Str11 extends AppCompatActivity {
 
 
         if (adsDataPrefs.getAppOpenSplashEnable()) {//if true
-
-            AppOpenAd.load(Str11.this, adsDataPrefs.getAdmAppOpenID(), build2, 1, new AppOpenAd.AppOpenAdLoadCallback() {
-                public void onAdLoaded(AppOpenAd appOpenAd) {//load app open
-                    super.onAdLoaded(appOpenAd);
-                    appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                            super.onAdFailedToShowFullScreenContent(adError);
-                            init();
-                        }
-
-                        @Override
-                        public void onAdDismissedFullScreenContent() {//dismiss app open
-                            super.onAdDismissedFullScreenContent();
-                            init();
-                        }
-                    });
-                    appOpenAd.show(Str11.this);
-                }
-
-                @Override
-                public void onAdFailedToLoad(LoadAdError loadAdError) {//error in load app open ad
-                    super.onAdFailedToLoad(loadAdError);
-                    init();
-                }
-            });
+            init();
+//            AppOpenAd.load(Str11.this, adsDataPrefs.getAdmAppOpenID(), build2, 1, new AppOpenAd.AppOpenAdLoadCallback() {
+//                public void onAdLoaded(AppOpenAd appOpenAd) {//load app open
+//                    super.onAdLoaded(appOpenAd);
+//                    appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+//                        @Override
+//                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+//                            super.onAdFailedToShowFullScreenContent(adError);
+//                            init();
+//                        }
+//
+//                        @Override
+//                        public void onAdDismissedFullScreenContent() {//dismiss app open
+//                            super.onAdDismissedFullScreenContent();
+//                            init();
+//                        }
+//                    });
+//                    appOpenAd.show(Str11.this);
+//                }
+//
+//                @Override
+//                public void onAdFailedToLoad(LoadAdError loadAdError) {//error in load app open ad
+//                    super.onAdFailedToLoad(loadAdError);
+//                    init();
+//                }
+//            });
         } else {
             init();
         }
@@ -203,32 +203,34 @@ public class Str11 extends AppCompatActivity {
         });
 
         if (adsDataPrefs.getAppOpenSplashEnable()) {//if true
-            AdRequest build2 = new AdRequest.Builder().build();
-            AppOpenAd.load(Str11.this, adsDataPrefs.getAdmAppOpenID(), build2, 1, new AppOpenAd.AppOpenAdLoadCallback() {
-                public void onAdLoaded(AppOpenAd appOpenAd) {//load app open
-                    super.onAdLoaded(appOpenAd);
-                    appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                            super.onAdFailedToShowFullScreenContent(adError);
-                            init();
-                        }
+            init();
 
-                        @Override
-                        public void onAdDismissedFullScreenContent() {//dismiss app open
-                            super.onAdDismissedFullScreenContent();
-                            init();//intent next activity
-                        }
-                    });
-                    appOpenAd.show(Str11.this);
-                }
-
-                @Override
-                public void onAdFailedToLoad(LoadAdError loadAdError) {//error in load app open ad
-                    super.onAdFailedToLoad(loadAdError);
-                    init();//intent next activity
-                }
-            });
+//            AdRequest build2 = new AdRequest.Builder().build();
+//            AppOpenAd.load(Str11.this, adsDataPrefs.getAdmAppOpenID(), build2, 1, new AppOpenAd.AppOpenAdLoadCallback() {
+//                public void onAdLoaded(AppOpenAd appOpenAd) {//load app open
+//                    super.onAdLoaded(appOpenAd);
+//                    appOpenAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+//                        @Override
+//                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+//                            super.onAdFailedToShowFullScreenContent(adError);
+//                            init();
+//                        }
+//
+//                        @Override
+//                        public void onAdDismissedFullScreenContent() {//dismiss app open
+//                            super.onAdDismissedFullScreenContent();
+//                            init();//intent next activity
+//                        }
+//                    });
+//                    appOpenAd.show(Str11.this);
+//                }
+//
+//                @Override
+//                public void onAdFailedToLoad(LoadAdError loadAdError) {//error in load app open ad
+//                    super.onAdFailedToLoad(loadAdError);
+//                    init();//intent next activity
+//                }
+//            });
         } else {
             init();
         }

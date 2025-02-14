@@ -13,13 +13,17 @@ android {
     defaultConfig {
         applicationId "com.hidefile.secure.folder.vault"
         minSdkVersion 23
-        versionCode 129
-//        versionName "1.29"
+        versionCode 135
+//        versionName "1.35"
         versionName "development"
         targetSdkVersion 34
         multiDexEnabled true
         setProperty("archivesBaseName", "Secure_Folder_$versionName.$versionCode")
 
+    }
+
+    kotlin {
+        jvmToolchain(17)
     }
     buildTypes {
         debug {

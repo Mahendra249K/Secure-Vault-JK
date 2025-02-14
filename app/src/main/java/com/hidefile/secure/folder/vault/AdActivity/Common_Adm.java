@@ -106,10 +106,11 @@ public class Common_Adm {
 
     public void loadOrShowAdmInterstial(boolean z, Activity activity, Call_Back_Ads call_Back_Ads) {
 
-//        if (!new Common_Adm().isOnline(activity)) {
+        if (!new Common_Adm().isOnline(activity)) {
 //            new Common_Adm().NoConnectionDialog(z, activity, call_Back_Ads);
-//            return;
-//        }
+            call_Back_Ads.onAdsFail();
+            return;
+        }
         getInstance();
 
         Dialog dialog = new Dialog(activity);
@@ -283,7 +284,8 @@ public class Common_Adm {
 
     public void everytimeInterstialAdShow(boolean z, Activity activity, Call_Back_Ads call_Back_Ads) {
         if (!new Common_Adm().isOnline(activity)) {
-            new Common_Adm().NoConnectionDialog(z, activity, call_Back_Ads);
+//            new Common_Adm().NoConnectionDialog(z, activity, call_Back_Ads);
+            call_Back_Ads.onAdsFail();
             return;
         }
         getInstance();

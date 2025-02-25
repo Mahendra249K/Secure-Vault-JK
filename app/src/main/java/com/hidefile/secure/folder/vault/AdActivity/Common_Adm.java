@@ -107,7 +107,6 @@ public class Common_Adm {
     public void loadOrShowAdmInterstial(boolean z, Activity activity, Call_Back_Ads call_Back_Ads) {
 
         if (!new Common_Adm().isOnline(activity)) {
-//            new Common_Adm().NoConnectionDialog(z, activity, call_Back_Ads);
             call_Back_Ads.onAdsFail();
             return;
         }

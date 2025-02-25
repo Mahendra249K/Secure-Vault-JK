@@ -84,8 +84,7 @@
                     android:background="@drawable/bord_1"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:padding="@dimen/_1sdp"
-                    android:visibility="gone">
+                    android:padding="@dimen/_1sdp">
 
                     <ImageView
                         android:id="@+id/ivMyBrowser"

@@ -2,7 +2,6 @@
 plugins {
     id 'kotlin-android'
     id 'com.android.application'
-//    id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
     id 'org.jetbrains.kotlin.android'
@@ -146,7 +145,6 @@ dependencies {
 
 
     implementation 'com.google.android.exoplayer:exoplayer:2.10.1'
-//    implementation 'com.applovin:applovin-sdk:11.4.2'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
@@ -156,7 +154,6 @@ dependencies {
     implementation 'com.android.databinding:compiler:3.1.4'
     implementation('com.calldorado:calldorado-release:8.1.8.3839@aar'){
         transitive = true
-//        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
     }
 
 }

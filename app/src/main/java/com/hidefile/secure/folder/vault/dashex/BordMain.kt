@@ -44,6 +44,7 @@ import com.hidefile.secure.folder.vault.AdActivity.SharedPref
 import com.hidefile.secure.folder.vault.R
 import com.hidefile.secure.folder.vault.cluecanva.RDbhp
 import com.hidefile.secure.folder.vault.cluecanva.RecentList
+import com.hidefile.secure.folder.vault.cluecanva.SupPref
 import com.hidefile.secure.folder.vault.cluecanva.SupPref.AccountName
 import com.hidefile.secure.folder.vault.cluecanva.SupPref.ExitNativeAd
 import com.hidefile.secure.folder.vault.cluecanva.SupPref.ExitNativeAdAfterAd
@@ -334,7 +335,7 @@ class BordMain : FoundationActivity() {
                 appList[arrAppLinks[i]] =
                     RecentList(arrAppIcons1[i], arrAppLinks[i], arrAppTitle[i])
             }
-//            SupPref.saveAppData(applicationContext, appList)
+            SupPref.saveAppData(applicationContext, appList)
             setBooleanValue(mContext, isFirstTime, false)
         }
     }
